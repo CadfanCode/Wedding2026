@@ -189,12 +189,12 @@ body {
     flex-direction: row; /* Image left, text right */
     justify-content: center;
     align-items: center;
-    padding: 20px 40px; /* Reduced top padding to bring image closer to navbar */
+    padding: 10px 40px 20px; /* Reduced top padding from 20px to 10px */
 }
 
 .hero img {
     width: 100%;
-    max-width: 400px; /* Slightly smaller for balance */
+    max-width: 400px;
     height: auto;
     margin: 0 20px 0 0; /* Space between image and text, no top margin */
 }
@@ -205,14 +205,14 @@ body {
 }
 
 .hero .date {
-    font-family: 'Playfair Display', serif; /* Elegant font */
+    font-family: 'Playfair Display', serif;
     font-size: 36px;
     font-weight: 400;
     margin-bottom: 10px;
 }
 
 .hero .location {
-    font-family: 'Playfair Display', serif; /* Elegant font */
+    font-family: 'Playfair Display', serif;
     font-size: 24px;
     font-weight: 400;
 }
@@ -276,13 +276,13 @@ body {
     }
 
     .hero#home {
-        flex-direction: column; /* Stack image and text on mobile */
-        padding: 10px 20px;
+        flex-direction: column;
+        padding: 5px 20px 10px; /* Even less top padding on mobile */
     }
 
     .hero img {
         max-width: 300px;
-        margin: 0 auto 20px; /* Center image, add bottom space */
+        margin: 0 auto 20px;
     }
 
     .hero .text-content {
