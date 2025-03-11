@@ -224,7 +224,7 @@ body {
 .hero {
     text-align: center;
     padding: 60px 20px;
-    background: linear-gradient(135deg, #f5e6e8, #fff);
+    background: #fff;
     border-radius: 10px;
     animation: fadeIn 1s ease-in;
 }
