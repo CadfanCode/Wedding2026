@@ -9,42 +9,43 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #f9f9f9;
-    background-image: url('brick-background.jpg'); /* Replace with your image path */
+    background-image: url('brick-background.jpg');
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
     background-repeat: repeat;
 }
 
-/* Wrapper for centering content */
 .container {
-    max-width: 1200px; /* Adjust this value based on your preference */
-    margin: 0 auto; /* Centers the container */
-    background: #fff; /* White background for content to stand out */
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #fff;
     position: relative;
 }
 
-/* Header adjustments */
 .header {
     position: fixed;
     top: 0;
     left: 0;
-    right: 0; /* Ensures it spans the viewport horizontally for positioning */
+    right: 0;
     background: rgba(255, 255, 255, 0.95);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     z-index: 1000;
     transition: all 0.3s ease;
 }
 
-/* Inner header container to constrain width */
 .header-inner {
-    max-width: 1200px; /* Matches .container */
-    margin: 0 auto; /* Centers the header content */
-    background: inherit; /* Inherits the header’s background */
+    max-width: 1200px;
+    margin: 0 auto;
+    background: inherit;
+    display: flex; /* Flexbox to align logo and menu button */
+    align-items: center;
+    justify-content: space-between; /* Space out logo and button */
+    padding: 0 20px; /* Add padding for spacing */
 }
 
 .logo-container {
-    padding: 20px;
+    padding: 20px 0;
     text-align: center;
 }
 
@@ -56,6 +57,58 @@ body {
 
 .logo:hover {
     transform: scale(1.05);
+}
+
+/* Hamburger Menu Button */
+.menu-toggle {
+    display: none; /* Hidden by default on desktop */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+}
+
+.hamburger {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #666;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 3px;
+    background: #666;
+    transition: all 0.3s ease;
+}
+
+.hamburger::before {
+    top: -8px;
+}
+
+.hamburger::after {
+    bottom: -8px;
+}
+
+/* When menu is active (open) */
+.menu-toggle.active .hamburger {
+    background: transparent; /* Hide middle line */
+}
+
+.menu-toggle.active .hamburger::before {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+.menu-toggle.active .hamburger::after {
+    transform: rotate(-45deg);
+    bottom: 0;
 }
 
 .navbar {
@@ -101,9 +154,8 @@ body {
     width: 100%;
 }
 
-/* Content adjustments */
 .content {
-    margin-top: 200px; /* Adjust based on header height */
+    margin-top: 200px;
     padding: 40px;
 }
 
@@ -137,12 +189,36 @@ body {
     }
 }
 
-/* Responsive Design */
+/* Mobile Adjustments */
 @media (max-width: 768px) {
     .container,
     .header-inner {
-        max-width: 100%; /* Full width on smaller screens */
-        padding: 0 15px; /* Optional padding for breathing room */
+        max-width: 100%;
+        padding: 0 15px;
+    }
+
+    .logo {
+        max-width: 120px;
+    }
+
+    .menu-toggle {
+        display: block; /* Show button on mobile */
+    }
+
+    .navbar {
+        display: none; /* Hide menu by default on mobile */
+        position: absolute;
+        top: 100%; /* Position below header */
+        left: 0;
+        right: 0;
+        background: #fff;
+        padding: 20px 0;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    .navbar.active {
+        display: block; /* Show when active */
     }
 
     .nav-menu {
@@ -150,10 +226,6 @@ body {
         align-items: center;
         gap: 20px;
         padding: 20px 0;
-    }
-
-    .logo {
-        max-width: 120px;
     }
 
     .hero h1 {
