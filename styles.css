@@ -14,8 +14,8 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    overflow-y: auto; /* Allow scrolling for transitions */
-    height: 100vh; /* Full viewport height */
+    overflow-y: auto;
+    height: 100vh;
 }
 
 .container {
@@ -165,54 +165,61 @@ body {
     margin-top: 100px; /* Space for fixed header */
     padding: 0;
     position: relative;
-    height: calc(100vh - 100px); /* Viewport height minus header */
-    overflow: hidden; /* Hide sections not in view */
+    height: calc(100vh - 100px);
+    overflow: hidden;
 }
 
 .hero,
 .section {
     text-align: center;
-    padding: 10px 5px; /* 60px 20p */
+    padding: 10px 5px;
     background: #fff;
-    height: 100%; /* Full height of content area */
+    height: 100%;
     width: 100%;
-    position: absolute; /* Stack sections absolutely */
-    top: 100%; /* Start off-screen below */
+    position: absolute;
+    top: 100%;
     left: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transition: top 0.5s ease; /* Smooth transition */
+    transition: top 0.5s ease;
 }
 
 /* First section visible by default */
 .hero#home {
-    top: 0; /* Start at top */
+    top: 0;
+    display: flex;
+    flex-direction: row; /* Image left, text right */
+    justify-content: center;
+    align-items: center;
+    padding: 20px 40px; /* Reduced top padding to bring image closer to navbar */
 }
 
 .hero img {
     width: 100%;
-    max-width: 500px;
+    max-width: 400px; /* Slightly smaller for balance */
     height: auto;
-    display: block;
-    margin: 0 auto 20px;
+    margin: 0 20px 0 0; /* Space between image and text, no top margin */
 }
 
-.hero h1 {
-    font-size: 48px;
+.hero .text-content {
+    text-align: left;
     color: #3f3f3f;
-    margin-bottom: 20px;
 }
 
-.hero p {
-    font-size: 20px;
-    color: #666;
+.hero .date {
+    font-family: 'Playfair Display', serif; /* Elegant font */
+    font-size: 36px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.hero .location {
+    font-family: 'Playfair Display', serif; /* Elegant font */
+    font-size: 24px;
+    font-weight: 400;
 }
 
 .section h2 {
     font-size: 36px;
-    color: #3f3f3f; 
+    color: #3f3f3f;
     margin-bottom: 20px;
 }
 
@@ -268,11 +275,32 @@ body {
         padding: 20px 0;
     }
 
-    .hero h1 {
-        font-size: 36px;
+    .hero#home {
+        flex-direction: column; /* Stack image and text on mobile */
+        padding: 10px 20px;
+    }
+
+    .hero img {
+        max-width: 300px;
+        margin: 0 auto 20px; /* Center image, add bottom space */
+    }
+
+    .hero .text-content {
+        text-align: center;
+    }
+
+    .hero .date {
+        font-size: 28px;
+    }
+
+    .hero .location {
+        font-size: 20px;
     }
 
     .section h2 {
         font-size: 28px;
     }
 }
+
+/* Import elegant font */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
