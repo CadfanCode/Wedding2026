@@ -240,6 +240,29 @@ body {
     animation: fadeIn 1s ease-in;
 }
 
+/* Default styles for all screens */
+.hero img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+/* Smaller screens (e.g., mobile) */
+@media (max-width: 768px) {
+    .hero img {
+        max-width: 300px; /* Smaller max size for mobile */
+    }
+}
+
+/* Larger screens (e.g., desktop) */
+@media (min-width: 1200px) {
+    .hero img {
+        max-width: 600px; /* Slightly larger for big screens if desired */
+    }
+}
+
 .hero h1 {
     font-size: 48px;
     color: #d4a5a5;
