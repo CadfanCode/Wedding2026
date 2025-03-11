@@ -162,17 +162,16 @@ body {
 }
 
 .content {
-    margin-top: 100px; /* Space for fixed header */
+    margin-top: 80px; /* Reduced from 100px to bring content closer to navbar */
     padding: 0;
     position: relative;
-    height: calc(100vh - 100px);
+    height: calc(100vh - 80px); /* Adjusted to match new margin-top */
     overflow: hidden;
 }
 
 .hero,
 .section {
     text-align: center;
-    padding: 10px 5px;
     background: #fff;
     height: 100%;
     width: 100%;
@@ -186,17 +185,17 @@ body {
 .hero#home {
     top: 0;
     display: flex;
-    flex-direction: row; /* Image left, text right */
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 10px 40px 20px; /* Reduced top padding from 20px to 10px */
+    padding: 5px 40px 20px; /* Further reduced top padding from 10px to 5px */
 }
 
 .hero img {
     width: 100%;
     max-width: 400px;
     height: auto;
-    margin: 0 20px 0 0; /* Space between image and text, no top margin */
+    margin: 0 20px 0 0;
 }
 
 .hero .text-content {
@@ -215,6 +214,14 @@ body {
     font-family: 'Playfair Display', serif;
     font-size: 24px;
     font-weight: 400;
+}
+
+.section {
+    padding: 80px 5px 10px; /* Added top padding to clear header */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .section h2 {
@@ -277,7 +284,7 @@ body {
 
     .hero#home {
         flex-direction: column;
-        padding: 5px 20px 10px; /* Even less top padding on mobile */
+        padding: 5px 20px 10px; /* Consistent minimal top padding */
     }
 
     .hero img {
@@ -295,6 +302,10 @@ body {
 
     .hero .location {
         font-size: 20px;
+    }
+
+    .section {
+        padding: 60px 20px 10px; /* Slightly less top padding on mobile */
     }
 
     .section h2 {
