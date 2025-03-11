@@ -13,18 +13,20 @@ body {
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat; /* Changed to no-repeat for cleaner look */
+    background-repeat: no-repeat;
+    overflow-y: hidden; /* Prevents scrolling beyond one section */
+    height: 100vh; /* Full viewport height */
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    background: transparent; /* Keeps background visible */
+    background: transparent;
     position: relative;
 }
 
 .header {
-    position: fixed; /* Already fixed, stays at top */
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -160,16 +162,25 @@ body {
 }
 
 .content {
-    margin-top: 100px; 
-    padding: 10px;
+    margin-top: 100px; /* Space for fixed header */
+    padding: 0;
+    height: calc(100vh - 100px); /* Full height minus header */
+    overflow: hidden; /* Prevents extra scrolling */
 }
 
-.hero {
+.hero,
+.section {
     text-align: center;
     padding: 60px 20px;
     background: #fff;
-    border-radius: 10px;
+    height: 100%; /* Full height of content area */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
     animation: fadeIn 1s ease-in;
+    border-radius: 0; /* No rounded corners since full-screen */
 }
 
 .hero img {
@@ -191,31 +202,6 @@ body {
     color: #666;
 }
 
-/* Section styles for single-page layout */
-/* Section styles for single-page layout */
-.section {
-    padding: 60px 20px;
-    text-align: center;
-    background: #fff;
-    margin: 0; /* Removed margin to eliminate gaps */
-    position: relative; /* For separator positioning */
-}
-
-/* Add elegant separator line between sections */
-.section:not(:last-child)::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 50%; /* Adjust width as desired */
-    height: 2px;
-    background: linear-gradient(to right, transparent, #d4a5a5, transparent); /* Elegant gradient */
-    border-radius: 1px;
-}
-.section:last-child {
-    border-radius: 0 0 10px 10px; /* Rounded bottom only */
-}
 .section h2 {
     font-size: 36px;
     color: #d4a5a5;
