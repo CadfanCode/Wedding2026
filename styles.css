@@ -9,17 +9,17 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #f9f9f9;
-    background-image: url('/images/Wales1.jpg');
+    background-image: url('brick-background.jpg');
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat; /* Changed to no-repeat for cleaner look */
+    background-repeat: repeat;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    background: rgba(255, 255, 255, 0.9); /* Semi-transparent for background visibility */
+    background: transparent; /* Changed to show brick background */
     position: relative;
 }
 
@@ -34,18 +34,19 @@ body {
     transition: all 0.3s ease;
 }
 
-/* Desktop: Stack vertically */
+/* Default (Desktop) Styles */
 .header-inner {
     max-width: 1200px;
     margin: 0 auto;
     background: inherit;
     padding: 0 20px;
-    display: block;
-    text-align: center;
+    display: block; /* Stack vertically by default */
+    text-align: center; /* Center-align contents */
 }
 
 .logo-container {
     padding: 20px 0;
+    text-align: center;
 }
 
 .logo {
@@ -54,19 +55,86 @@ body {
     transition: transform 0.3s ease;
 }
 
-.logo:hover {
-    transform: scale(1.05);
-}
-
 .menu-toggle {
-    display: none;
+    display: none; /* Hidden by default on desktop */
     background: none;
     border: none;
     cursor: pointer;
     padding: 0;
     width: 30px;
     height: 30px;
-    position: relative;
+    z-index: 1001;
+}
+
+.navbar {
+    background: #fff;
+    padding: 15px 0;
+    display: block; /* Full-width navbar */
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+/* Mobile Adjustments (max-width: 768px) */
+@media (max-width: 768px) {
+    .header-inner {
+        display: flex; /* Switch to flex for horizontal layout */
+        align-items: center;
+        justify-content: space-between; /* Logo on left, menu toggle on right */
+        padding: 0 15px;
+        position: relative;
+    }
+
+    .logo {
+        max-width: 120px; /* Smaller logo on mobile */
+    }
+
+    .menu-toggle {
+        display: block; /* Show hamburger menu on mobile */
+        position: static; /* Reset from absolute positioning */
+    }
+
+    .navbar {
+        display: none; /* Hide menu by default on mobile */
+        position: absolute;
+        top: 100%; /* Position below header */
+        left: 0;
+        right: 0;
+        background: #fff;
+        padding: 20px 0;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    .navbar.active {
+        display: block; /* Show when toggled */
+    }
+
+    .nav-menu {
+        flex-direction: column; /* Stack menu items vertically when open */
+        align-items: center;
+        gap: 20px;
+        padding: 20px 0;
+    }
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.menu-toggle {
+    display: none; /* Hidden by default on desktop */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0; /* Remove padding to avoid shifting */
+    width: 30px; /* Fixed width for consistency */
+    height: 30px; /* Fixed height to center the icon */
+    position: relative; /* Make the button the positioning context */
     z-index: 1001;
 }
 
@@ -76,9 +144,9 @@ body {
     height: 3px;
     background: #666;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 50%; /* Center vertically in the button */
+    left: 50%; /* Center horizontally in the button */
+    transform: translate(-50%, -50%); /* Offset by half its size */
     transition: all 0.3s ease;
 }
 
@@ -93,17 +161,18 @@ body {
 }
 
 .hamburger::before {
-    top: -8px;
-    left: 0;
+    top: -8px; /* 8px above the center line */
+    left: 0; /* Align with the center line */
 }
 
 .hamburger::after {
-    bottom: -8px;
-    left: 0;
+    bottom: -8px; /* 8px below the center line */
+    left: 0; /* Align with the center line */
 }
 
+/* When menu is active (open) */
 .menu-toggle.active .hamburger {
-    background: transparent;
+    background: transparent; /* Hide middle line */
 }
 
 .menu-toggle.active .hamburger::before {
@@ -114,19 +183,6 @@ body {
 .menu-toggle.active .hamburger::after {
     transform: rotate(-45deg);
     bottom: 0;
-}
-
-.navbar {
-    background: #fff;
-    padding: 15px 0;
-    display: block;
-}
-
-.nav-menu {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 40px;
 }
 
 .nav-link {
@@ -161,20 +217,20 @@ body {
 }
 
 .content {
-    margin-top: 200px;
+    margin-top: 100px; /* Adjusted for single-page layout */
     padding: 40px;
 }
 
 .hero {
     text-align: center;
     padding: 60px 20px;
-    background: #fff;
+    background: linear-gradient(135deg, #f5e6e8, #fff);
     border-radius: 10px;
     animation: fadeIn 1s ease-in;
 }
 
 .hero img {
-    width: 75%;
+    width: 100%;
     max-width: 500px;
     height: auto;
     display: block;
@@ -192,6 +248,27 @@ body {
     color: #666;
 }
 
+/* New section styles for single-page layout */
+.section {
+    padding: 60px 20px;
+    text-align: center;
+    background: #fff;
+    border-radius: 10px;
+    margin: 20px 0;
+    animation: fadeIn 1s ease-in;
+}
+
+.section h2 {
+    font-size: 36px;
+    color: #d4a5a5;
+    margin-bottom: 20px;
+}
+
+.section p {
+    font-size: 18px;
+    color: #666;
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -203,19 +280,12 @@ body {
     }
 }
 
-/* Mobile: Horizontal layout */
+/* Mobile Adjustments */
 @media (max-width: 768px) {
-    .container {
+    .container,
+    .header-inner {
         max-width: 100%;
         padding: 0 15px;
-    }
-
-    .header-inner {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 15px;
-        position: relative;
     }
 
     .logo {
@@ -223,14 +293,13 @@ body {
     }
 
     .menu-toggle {
-        display: block;
-        position: static;
+        display: block; /* Show button on mobile */
     }
 
     .navbar {
-        display: none;
+        display: none; /* Hide menu by default on mobile */
         position: absolute;
-        top: 100%;
+        top: 100%; /* Position below header */
         left: 0;
         right: 0;
         background: #fff;
@@ -240,7 +309,7 @@ body {
     }
 
     .navbar.active {
-        display: block;
+        display: block; /* Show when active */
     }
 
     .nav-menu {
@@ -250,18 +319,11 @@ body {
         padding: 20px 0;
     }
 
-    .hero img {
-        max-width: 300px;
-    }
-
     .hero h1 {
         font-size: 36px;
     }
-}
 
-/* Larger screens */
-@media (min-width: 1200px) {
-    .hero img {
-        max-width: 600px;
+    .section h2 {
+        font-size: 28px;
     }
 }
