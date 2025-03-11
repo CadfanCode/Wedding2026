@@ -59,13 +59,15 @@ body {
     transform: scale(1.05);
 }
 
-/* Hamburger Menu Button */
 .menu-toggle {
     display: none; /* Hidden by default on desktop */
     background: none;
     border: none;
     cursor: pointer;
-    padding: 10px;
+    padding: 0; /* Remove padding to avoid shifting */
+    width: 30px; /* Fixed width for consistency */
+    height: 30px; /* Fixed height to center the icon */
+    position: relative; /* Make the button the positioning context */
     z-index: 1001;
 }
 
@@ -74,7 +76,10 @@ body {
     width: 25px;
     height: 3px;
     background: #666;
-    position: relative;
+    position: absolute;
+    top: 50%; /* Center vertically in the button */
+    left: 50%; /* Center horizontally in the button */
+    transform: translate(-50%, -50%); /* Offset by half its size */
     transition: all 0.3s ease;
 }
 
@@ -89,11 +94,13 @@ body {
 }
 
 .hamburger::before {
-    top: -8px;
+    top: -8px; /* 8px above the center line */
+    left: 0; /* Align with the center line */
 }
 
 .hamburger::after {
-    bottom: -8px;
+    bottom: -8px; /* 8px below the center line */
+    left: 0; /* Align with the center line */
 }
 
 /* When menu is active (open) */
