@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
             navLinks.forEach(nav => nav.classList.remove('active'));
             this.classList.add('active');
             
-            // Smooth page transition
             e.preventDefault();
             const href = this.getAttribute('href');
             
@@ -37,9 +36,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const content = document.querySelector('.content');
     content.style.transition = 'opacity 0.3s ease';
     content.style.opacity = '1';
+
+    // Menu toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navbar = document.querySelector('.navbar');
+
+    menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('active');
+        navbar.classList.toggle('active');
+    });
 });
 
-// Function to create other pages (call this for each new page)
+// Function for other pages
 function initializePage() {
     const content = document.querySelector('.content');
     if (content) {
@@ -49,13 +57,3 @@ function initializePage() {
         }, 100);
     }
 }
-
-document.addEventListener('DOMContentLoaded', function () {
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navbar = document.querySelector('.navbar');
-
-    menuToggle.addEventListener('click', function () {
-        menuToggle.classList.toggle('active');
-        navbar.classList.toggle('active');
-    });
-});
