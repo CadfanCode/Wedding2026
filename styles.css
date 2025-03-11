@@ -33,15 +33,14 @@ body {
     z-index: 1000;
     transition: all 0.3s ease;
 }
-
+/* Default (Desktop) Styles */
 .header-inner {
     max-width: 1200px;
     margin: 0 auto;
     background: inherit;
-    display: flex; /* Flexbox to align logo and menu button */
-    align-items: center;
-    justify-content: space-between; /* Space out logo and button */
-    padding: 0 20px; /* Add padding for spacing */
+    padding: 0 20px;
+    display: block; /* Stack vertically by default */
+    text-align: center; /* Center-align contents */
 }
 
 .logo-container {
@@ -53,6 +52,73 @@ body {
     max-width: 350px;
     height: auto;
     transition: transform 0.3s ease;
+}
+
+.menu-toggle {
+    display: none; /* Hidden by default on desktop */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    z-index: 1001;
+}
+
+.navbar {
+    background: #fff;
+    padding: 15px 0;
+    display: block; /* Full-width navbar */
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+/* Mobile Adjustments (max-width: 768px) */
+@media (max-width: 768px) {
+    .header-inner {
+        display: flex; /* Switch to flex for horizontal layout */
+        align-items: center;
+        justify-content: space-between; /* Logo on left, menu toggle on right */
+        padding: 0 15px;
+        position: relative;
+    }
+
+    .logo {
+        max-width: 120px; /* Smaller logo on mobile */
+    }
+
+    .menu-toggle {
+        display: block; /* Show hamburger menu on mobile */
+        position: static; /* Reset from absolute positioning */
+    }
+
+    .navbar {
+        display: none; /* Hide menu by default on mobile */
+        position: absolute;
+        top: 100%; /* Position below header */
+        left: 0;
+        right: 0;
+        background: #fff;
+        padding: 20px 0;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    .navbar.active {
+        display: block; /* Show when toggled */
+    }
+
+    .nav-menu {
+        flex-direction: column; /* Stack menu items vertically when open */
+        align-items: center;
+        gap: 20px;
+        padding: 20px 0;
+    }
 }
 
 .logo:hover {
