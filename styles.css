@@ -27,8 +27,8 @@ body {
 }
 
 .logo {
-    max-width: 350px;
-    height: auto;
+    width: 350px;
+    height: 50px;
     transition: transform 0.3s ease;
 }
 
