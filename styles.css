@@ -161,7 +161,7 @@ body {
 
 .content {
     margin-top: 100px; 
-    padding: 0px;
+    padding: 10px;
 }
 
 .hero {
@@ -192,15 +192,30 @@ body {
 }
 
 /* Section styles for single-page layout */
+/* Section styles for single-page layout */
 .section {
     padding: 60px 20px;
     text-align: center;
     background: #fff;
-    border-radius: 10px;
-    margin: 20px 0;
-    animation: fadeIn 1s ease-in;
+    margin: 0; /* Removed margin to eliminate gaps */
+    position: relative; /* For separator positioning */
 }
 
+/* Add elegant separator line between sections */
+.section:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%; /* Adjust width as desired */
+    height: 2px;
+    background: linear-gradient(to right, transparent, #d4a5a5, transparent); /* Elegant gradient */
+    border-radius: 1px;
+}
+.section:last-child {
+    border-radius: 0 0 10px 10px; /* Rounded bottom only */
+}
 .section h2 {
     font-size: 36px;
     color: #d4a5a5;
