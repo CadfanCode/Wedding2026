@@ -14,7 +14,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    overflow-y: hidden; /* Prevents scrolling beyond one section */
+    overflow-y: auto; /* Allow scrolling for transitions */
     height: 100vh; /* Full viewport height */
 }
 
@@ -164,8 +164,9 @@ body {
 .content {
     margin-top: 100px; /* Space for fixed header */
     padding: 0;
-    height: calc(100vh - 100px); /* Full height minus header */
-    overflow: hidden; /* Prevents extra scrolling */
+    position: relative;
+    height: calc(100vh - 100px); /* Viewport height minus header */
+    overflow: hidden; /* Hide sections not in view */
 }
 
 .hero,
@@ -175,12 +176,19 @@ body {
     background: #fff;
     height: 100%; /* Full height of content area */
     width: 100%;
+    position: absolute; /* Stack sections absolutely */
+    top: 100%; /* Start off-screen below */
+    left: 0;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Center content vertically */
-    align-items: center; /* Center content horizontally */
-    animation: fadeIn 1s ease-in;
-    border-radius: 0; /* No rounded corners since full-screen */
+    justify-content: center;
+    align-items: center;
+    transition: top 0.5s ease; /* Smooth transition */
+}
+
+/* First section visible by default */
+.hero#home {
+    top: 0; /* Start at top */
 }
 
 .hero img {
@@ -211,17 +219,6 @@ body {
 .section p {
     font-size: 18px;
     color: #666;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 /* Mobile Adjustments */

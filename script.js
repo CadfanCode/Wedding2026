@@ -8,9 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
         navbar.classList.toggle('active');
     });
 
-    // Smooth scrolling for nav links
+    // Smooth section transition
     const navLinks = document.querySelectorAll('.nav-link');
-    const headerHeight = document.querySelector('.header').offsetHeight; // Get header height
+    const sections = document.querySelectorAll('.hero, .section');
     
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
@@ -24,14 +24,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetId = this.getAttribute('href').substring(1); // Remove '#'
             const targetSection = document.getElementById(targetId);
             
-            // Calculate the exact position (accounting for fixed header)
-            const targetPosition = targetSection.offsetTop - headerHeight;
-
-            // Scroll smoothly to the section
-            window.scrollTo({
-                top: targetPosition,
-                behavior: 'smooth'
+            // Move all sections off-screen except the target
+            sections.forEach(section => {
+                section.style.top = '100%'; // Move off-screen
             });
+            targetSection.style.top = '0'; // Move target to top
 
             // Close mobile menu if open
             if (navbar.classList.contains('active')) {
@@ -41,10 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Initially scroll to the 'home' section
-    const homeSection = document.getElementById('home');
-    window.scrollTo({
-        top: homeSection.offsetTop - headerHeight,
-        behavior: 'smooth'
-    });
+    // Ensure 'home' is visible on load
+    document.getElementById('home').style.top = '0';
 });
