@@ -30,6 +30,9 @@ document.addEventListener('DOMContentLoaded', () => {
             });
             targetSection.classList.add('active');
 
+            // Scroll to top of content area
+            window.scrollTo(0, 0);
+
             // Close mobile menu if open
             if (navbar.classList.contains('active')) {
                 menuToggle.classList.remove('active');

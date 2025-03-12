@@ -163,19 +163,22 @@ body {
     margin-top: 80px; /* Matches header height */
     padding: 0;
     position: relative;
-    background: #fff; /* White background for content area */
-    overflow-y: auto; /* Enable scrolling within content */
+    min-height: calc(100vh - 80px); /* Ensure content area fills viewport */
 }
 
 .hero,
 .section {
     text-align: center;
+    background: #fff;
     width: 100%;
-    padding: 100px 20px 20px; /* Top padding to clear header */
+    position: absolute;
+    top: 0; /* All start at top, visibility toggled */
+    left: 0;
     display: none; /* Hidden by default */
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    padding: 100px 20px 20px; /* Top padding to clear header */
 }
 
 .hero.active,
@@ -183,9 +186,9 @@ body {
     display: flex; /* Show active section */
 }
 
-/* First section visible by default */
+/* Home section specific styling */
 .hero#home {
-    display: flex; /* Visible on load */
+    min-height: calc(100vh - 80px); /* Full viewport minus header */
     flex-direction: row;
     justify-content: center;
     align-items: center;
@@ -215,6 +218,10 @@ body {
     font-family: 'Playfair Display', serif;
     font-size: 24px;
     font-weight: 400;
+}
+
+.section {
+    /* No min-height here, let content dictate */
 }
 
 .section h2 {
