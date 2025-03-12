@@ -234,11 +234,68 @@ body {
     color: #666;
 }
 
-/* Timeline Styles */
+/* Schedule List Styles */
+.schedule-list {
+    max-width: 800px; /* Matches .section-content width */
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.day-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    color: #3f3f3f;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.day-line {
+    border: 0;
+    height: 1px;
+    background: #d4a5a5;
+    margin: 0 auto 20px;
+    width: 50px; /* Short line like reference site */
+}
+
+.event {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.event-time {
+    width: 150px; /* Fixed width for timespan column */
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700; /* Bold like reference site */
+    color: #3f3f3f;
+    text-align: right;
+    padding-right: 20px;
+}
+
+.event-details {
+    flex: 1; /* Takes remaining space */
+    font-family: 'Poppins', sans-serif;
+    color: #666;
+}
+
+.event-details h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #3f3f3f;
+    margin-bottom: 5px;
+}
+
+.event-details p {
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+/* Timeline Styles (unchanged, kept for reference) */
 .timeline {
     display: flex;
     flex-direction: column;
-    gap: 24px; /* Matches reference site's tighter spacing */
+    gap: 30px; /* Increased gap for elegance */
     position: relative;
     padding: 20px 0;
     max-width: 800px; /* Matches .section-content width */
@@ -248,51 +305,58 @@ body {
 .timeline::before {
     content: '';
     position: absolute;
-    left: 110px; /* Positions line after time, before description */
+    left: 20px; /* Align with item content */
     top: 0;
     bottom: 0;
     width: 2px;
-    background: #d4a5a5; /* Solid color matching your theme */
+    background: linear-gradient(to bottom, #d4a5a5 0%, #d4a5a5 50%, transparent 100%); /* Subtle gradient fade */
     z-index: 0; /* Behind items */
 }
 
 .timeline-item {
-    display: flex;
-    align-items: center; /* Horizontal alignment */
+    background: linear-gradient(135deg, #ffffff 0%, #f9f9f9 100%); /* Subtle gradient */
+    padding: 20px 25px 20px 50px; /* Extra left padding for arrow */
+    border-radius: 12px; /* Softer corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Subtle shadow */
     position: relative;
-    padding: 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Interactivity */
     z-index: 1; /* Above line */
 }
 
+.timeline-item:hover {
+    transform: translateY(-5px); /* Lift on hover */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Enhanced shadow on hover */
+}
+
 .timeline-item::before {
-    content: '';
+    content: url('/images/sketched-arrow.png'); /* Replace with your sketched arrow image */
     position: absolute;
-    left: 105px; /* Centers dot on the line */
+    left: 10px;
     top: 50%;
     transform: translateY(-50%);
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: #d4a5a5; /* Matches line color */
+    width: 20px; /* Adjust based on your image */
+    height: 20px;
     z-index: 1;
+    /* Fallback if no image: */
+    /* content: ''; */
+    /* width: 12px; */
+    /* height: 12px; */
+    /* border-radius: 50%; */
+    /* background: #d4a5a5; */
 }
 
 .timeline-item h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 20px; /* Slightly smaller, less bold than before */
-    font-weight: 400; /* Matches reference site's lighter time */
-    color: #3f3f3f;
-    width: 100px; /* Fixed width for alignment */
-    text-align: right; /* Aligns time to the right of its space */
-    margin-right: 20px; /* Space between time and dot */
+    font-family: 'Playfair Display', serif; /* Elegant font */
+    font-size: 1.5em;
+    color: #3f3f3f; /* Neutral, elegant color */
+    margin-bottom: 8px;
 }
 
 .timeline-item p {
     font-family: 'Poppins', sans-serif;
-    font-size: 16px; /* Slightly smaller for compactness */
+    font-size: 1em;
     color: #666;
     line-height: 1.4;
-    margin-left: 25px; /* Space after dot */
 }
 
 /* Section Content Styles */
@@ -471,29 +535,55 @@ body {
         padding: 15px 0;
     }
 
-    .timeline::before {
-        left: 90px; /* Adjusted for smaller screen */
-    }
-
     .timeline-item {
-        padding: 0;
-    }
-
-    .timeline-item::before {
-        left: 85px; /* Adjusted for smaller screen */
-        width: 10px;
-        height: 10px;
+        padding: 15px 20px 15px 40px; /* Adjusted for smaller screens */
     }
 
     .timeline-item h3 {
-        font-size: 18px;
-        width: 80px; /* Reduced width for mobile */
-        margin-right: 15px;
+        font-size: 1.25em;
     }
 
     .timeline-item p {
+        font-size: 0.9em;
+    }
+
+    .timeline::before {
+        left: 15px;
+    }
+
+    .timeline-item::before {
+        left: 5px;
+        width: 15px; /* Adjust for mobile */
+        height: 15px;
+    }
+
+    .schedule-list {
+        padding: 15px 0;
+    }
+
+    .day-title {
+        font-size: 24px;
+    }
+
+    .event {
+        flex-direction: column;
+        margin-bottom: 15px;
+    }
+
+    .event-time {
+        width: 100%;
+        text-align: left;
+        padding-right: 0;
+        margin-bottom: 5px;
+        font-size: 16px;
+    }
+
+    .event-details h4 {
+        font-size: 16px;
+    }
+
+    .event-details p {
         font-size: 14px;
-        margin-left: 20px;
     }
 }
 
