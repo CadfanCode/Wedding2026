@@ -238,7 +238,7 @@ body {
 .timeline {
     display: flex;
     flex-direction: column;
-    gap: 40px; /* Increased spacing for clarity */
+    gap: 24px; /* Matches reference site's tighter spacing */
     position: relative;
     padding: 20px 0;
     max-width: 800px; /* Matches .section-content width */
@@ -248,49 +248,51 @@ body {
 .timeline::before {
     content: '';
     position: absolute;
-    left: 15px; /* Adjusted for dot alignment */
+    left: 110px; /* Positions line after time, before description */
     top: 0;
     bottom: 0;
     width: 2px;
-    background: #d4a5a5; /* Solid color, no gradient */
+    background: #d4a5a5; /* Solid color matching your theme */
     z-index: 0; /* Behind items */
 }
 
 .timeline-item {
     display: flex;
-    align-items: center; /* Align time and description horizontally */
-    padding: 0 0 0 40px; /* Space for dot */
+    align-items: center; /* Horizontal alignment */
     position: relative;
+    padding: 0;
     z-index: 1; /* Above line */
 }
 
 .timeline-item::before {
     content: '';
     position: absolute;
-    left: 10px; /* Center dot on line */
+    left: 105px; /* Centers dot on the line */
     top: 50%;
     transform: translateY(-50%);
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: #d4a5a5; /* Matching line color */
+    background: #d4a5a5; /* Matches line color */
     z-index: 1;
 }
 
 .timeline-item h3 {
     font-family: 'Playfair Display', serif;
-    font-size: 24px; /* Larger for emphasis */
-    font-weight: 700; /* Bold like reference site */
+    font-size: 20px; /* Slightly smaller, less bold than before */
+    font-weight: 400; /* Matches reference site's lighter time */
     color: #3f3f3f;
-    margin-right: 20px; /* Space between time and description */
-    min-width: 100px; /* Consistent width for alignment */
+    width: 100px; /* Fixed width for alignment */
+    text-align: right; /* Aligns time to the right of its space */
+    margin-right: 20px; /* Space between time and dot */
 }
 
 .timeline-item p {
     font-family: 'Poppins', sans-serif;
-    font-size: 18px;
+    font-size: 16px; /* Slightly smaller for compactness */
     color: #666;
-    line-height: 1.6;
+    line-height: 1.4;
+    margin-left: 25px; /* Space after dot */
 }
 
 /* Section Content Styles */
@@ -465,31 +467,33 @@ body {
     }
 
     .timeline {
-        gap: 30px;
+        gap: 20px;
         padding: 15px 0;
     }
 
     .timeline::before {
-        left: 10px;
+        left: 90px; /* Adjusted for smaller screen */
     }
 
     .timeline-item {
-        padding: 0 0 0 30px; /* Adjusted for smaller screens */
+        padding: 0;
     }
 
     .timeline-item::before {
-        left: 5px;
+        left: 85px; /* Adjusted for smaller screen */
         width: 10px;
         height: 10px;
     }
 
     .timeline-item h3 {
-        font-size: 20px;
-        min-width: 80px;
+        font-size: 18px;
+        width: 80px; /* Reduced width for mobile */
+        margin-right: 15px;
     }
 
     .timeline-item p {
-        font-size: 16px;
+        font-size: 14px;
+        margin-left: 20px;
     }
 }
 
