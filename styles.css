@@ -578,6 +578,13 @@ body {
     .schedule-list {
         padding: 15px 0;
     }
+    .schedule-image {
+        display: block;
+        max-width: 60%; /* Adjust size */
+        height: auto;
+        margin: 10px auto 0; /* Centers the image and adds space */
+    }
+    
 
     .day-title {
         font-size: 24px;
