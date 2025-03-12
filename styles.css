@@ -15,7 +15,6 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     overflow-y: auto;
-    height: 100vh;
 }
 
 .container {
@@ -165,26 +164,27 @@ body {
     margin-top: 80px; /* Matches header height */
     padding: 0;
     position: relative;
-    height: calc(100vh - 80px);
-    overflow: hidden;
 }
 
 .hero,
 .section {
     text-align: center;
     background: #fff;
-    height: 100%;
     width: 100%;
     position: absolute;
     top: 100%; /* Off-screen by default */
     left: 0;
     transition: top 0.5s ease;
-    padding: 20px; /* Minimal padding, content will add more if needed */
+    padding: 100px 20px 20px; /* Increased top padding to clear header */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 /* First section visible by default */
 .hero#home {
-    top: 0; /* Visible on load */
+    top: 0;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -218,14 +218,25 @@ body {
 }
 
 .section {
-    padding-top: 80px; /* Ensures content clears fixed header */
+    /* Removed min-height to let content determine height */
+    overflow-y: auto; /* Option 1: Scroll within section */
+}
+
+/* Ensure active section is fully visible */
+.section[style*="top: 0"] {
+    height: auto; /* Let content dictate height */
 }
 
 .section h2 {
     font-size: 36px;
     color: #3f3f3f;
     margin-bottom: 20px;
-    font-family: 'Cinzel', serif; /* Elegant, modern font for headings */
+    font-family: 'Playfair Display', serif;
+}
+
+.section p {
+    font-size: 18px;
+    color: #666;
 }
 
 /* Mobile Adjustments */
@@ -298,7 +309,7 @@ body {
     }
 
     .section {
-        padding-top: 60px; /* Adjusted for mobile */
+        padding: 80px 15px 20px; /* Adjusted for mobile */
     }
 
     .section h2 {
@@ -307,16 +318,15 @@ body {
 }
 
 /* Import elegant fonts */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&display=swap');
 
-/* Travel & Accommodation Section Styles */
+/* Additional Styles for Travel & Accommodation Section */
 .section-content {
     text-align: left;
     max-width: 800px;
     margin: 0 auto;
-    font-family: 'Lora', serif; /* Elegant, modern serif for body text */
-    font-weight: 400;
-    color: #666;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
 }
 
 .section-content h3 {
@@ -324,7 +334,7 @@ body {
     color: #3f3f3f;
     margin-top: 30px;
     margin-bottom: 10px;
-    font-family: 'Cinzel', serif;
+    font-family: 'Playfair Display', serif;
     font-weight: 400;
 }
 
@@ -333,7 +343,7 @@ body {
     color: #666;
     margin-top: 20px;
     margin-bottom: 10px;
-    font-family: 'Cinzel', serif;
+    font-family: 'Playfair Display', serif;
     font-weight: 400;
 }
 
@@ -342,7 +352,7 @@ body {
     color: #666;
     margin-top: 15px;
     margin-bottom: 5px;
-    font-family: 'Cinzel', serif;
+    font-family: 'Playfair Display', serif;
     font-weight: 400;
 }
 
@@ -352,7 +362,6 @@ body {
 
 .travel-option p {
     margin-bottom: 10px;
-    font-size: 16px; /* Slightly smaller for readability */
 }
 
 .travel-option ul {
@@ -366,13 +375,13 @@ body {
 }
 
 .section-content a {
-    color: #333; /* Matches body text, no pink */
-    font-weight: bold; /* Bold for emphasis */
+    color: #333;
+    font-weight: bold;
     text-decoration: none;
 }
 
 .section-content a:hover {
-    text-decoration: underline; /* Subtle hover effect */
+    text-decoration: underline;
 }
 
 /* Mobile Adjustments for Travel & Accommodation */
@@ -391,9 +400,5 @@ body {
 
     .section-content h5 {
         font-size: 16px;
-    }
-
-    .travel-option p {
-        font-size: 14px;
     }
 }
