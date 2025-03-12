@@ -179,11 +179,13 @@ body {
     justify-content: flex-start;
     align-items: center;
     padding: 100px 20px 20px; /* Top padding to clear header */
+    z-index: 1; /* Ensure stacking order */
 }
 
 .hero.active,
 .section.active {
     display: flex; /* Show active section */
+    z-index: 2; /* Bring active section to front */
 }
 
 /* Home section specific styling */
@@ -300,6 +302,80 @@ body {
     line-height: 1.4;
 }
 
+/* Section Content Styles */
+.section-content {
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    padding-bottom: 20px; /* Ensures bottom spacing */
+}
+
+.section-content img {
+    display: block; /* Ensures it’s a block element for centering */
+    max-width: 100%; /* Scales to fit container */
+    width: 800px; /* Matches max-width of .section-content */
+    height: auto; /* Maintains aspect ratio */
+    margin: 0 auto 20px; /* Centers and adds spacing below */
+    border-radius: 8px; /* Optional: subtle rounding for elegance */
+}
+
+.section-content h3 {
+    font-size: 24px;
+    color: #3f3f3f;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+}
+
+.section-content h4 {
+    font-size: 20px;
+    color: #666;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+}
+
+.section-content h5 {
+    font-size: 18px;
+    color: #666;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+}
+
+.travel-option {
+    margin-bottom: 20px;
+}
+
+.travel-option p {
+    margin-bottom: 10px;
+}
+
+.travel-option ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+.travel-option li {
+    margin-bottom: 5px;
+}
+
+.section-content a {
+    color: #333;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.section-content a:hover {
+    text-decoration: underline;
+}
+
 /* Mobile Adjustments */
 @media (max-width: 768px) {
     .container {
@@ -377,6 +453,26 @@ body {
         font-size: 28px;
     }
 
+    .section-content {
+        padding: 0 15px 20px;
+    }
+
+    .section-content img {
+        width: 100%; /* Full width on mobile, respecting padding */
+    }
+
+    .section-content h3 {
+        font-size: 20px;
+    }
+
+    .section-content h4 {
+        font-size: 18px;
+    }
+
+    .section-content h5 {
+        font-size: 16px;
+    }
+
     .timeline {
         gap: 20px;
         padding: 15px 0;
@@ -407,100 +503,3 @@ body {
 
 /* Import elegant fonts */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&display=swap');
-
-/* Additional Styles for Travel & Accommodation Section */
-.section-content {
-    text-align: left;
-    max-width: 800px;
-    margin: 0 auto;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 300;
-    padding-bottom: 20px; /* Ensures bottom spacing */
-}
-
-.section-content img {
-    display: block; /* Ensures it’s a block element for centering */
-    max-width: 100%; /* Scales to fit container */
-    width: 800px; /* Matches max-width of .section-content */
-    height: auto; /* Maintains aspect ratio */
-    margin: 0 auto 20px; /* Centers and adds spacing below */
-    border-radius: 8px; /* Optional: subtle rounding for elegance */
-}
-
-.section-content h3 {
-    font-size: 24px;
-    color: #3f3f3f;
-    margin-top: 30px;
-    margin-bottom: 10px;
-    font-family: 'Playfair Display', serif;
-    font-weight: 400;
-}
-
-.section-content h4 {
-    font-size: 20px;
-    color: #666;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    font-family: 'Playfair Display', serif;
-    font-weight: 400;
-}
-
-.section-content h5 {
-    font-size: 18px;
-    color: #666;
-    margin-top: 15px;
-    margin-bottom: 5px;
-    font-family: 'Playfair Display', serif;
-    font-weight: 400;
-}
-
-.travel-option {
-    margin-bottom: 20px;
-}
-
-.travel-option p {
-    margin-bottom: 10px;
-}
-
-.travel-option ul {
-    list-style-type: disc;
-    margin-left: 20px;
-    margin-bottom: 10px;
-}
-
-.travel-option li {
-    margin-bottom: 5px;
-}
-
-.section-content a {
-    color: #333;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-.section-content a:hover {
-    text-decoration: underline;
-}
-
-/* Mobile Adjustments for Travel & Accommodation */
-@media (max-width: 768px) {
-    .section-content {
-        padding: 0 15px 20px;
-    }
-
-    .section-content img {
-        width: 100%; /* Full width on mobile, respecting padding */
-    }
-
-    .section-content h3 {
-        font-size: 20px;
-    }
-
-    .section-content h4 {
-        font-size: 18px;
-    }
-
-    .section-content h5 {
-        font-size: 16px;
-    }
-}
