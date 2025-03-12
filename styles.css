@@ -315,3 +315,77 @@ body {
 
 /* Import elegant font */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+/* Additional Styles for Travel & Accommodation Section */
+.section-content {
+    text-align: left;
+    max-width: 800px; /* Keeps text readable without stretching too wide */
+    margin: 0 auto;
+}
+
+.section-content h3 {
+    font-size: 24px;
+    color: #3f3f3f;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.section-content h4 {
+    font-size: 20px;
+    color: #666;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.section-content h5 {
+    font-size: 18px;
+    color: #666;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.travel-option {
+    margin-bottom: 20px;
+}
+
+.travel-option p {
+    margin-bottom: 10px;
+}
+
+.travel-option ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+.travel-option li {
+    margin-bottom: 5px;
+}
+
+.section-content a {
+    color: #d4a5a5;
+    text-decoration: none;
+}
+
+.section-content a:hover {
+    text-decoration: underline;
+}
+
+/* Mobile Adjustments for Travel & Accommodation */
+@media (max-width: 768px) {
+    .section-content {
+        padding: 0 15px;
+    }
+
+    .section-content h3 {
+        font-size: 20px;
+    }
+
+    .section-content h4 {
+        font-size: 18px;
+    }
+
+    .section-content h5 {
+        font-size: 16px;
+    }
+}
