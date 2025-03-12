@@ -188,6 +188,17 @@ body {
     z-index: 2; /* Bring active section to front */
 }
 
+/* Fade-in animation */
+.section.fade-in,
+.hero.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
 /* Home section specific styling */
 .hero#home {
     min-height: calc(100vh - 80px); /* Full viewport minus header */
@@ -254,12 +265,13 @@ body {
     height: 1px;
     background: #d4a5a5;
     margin: 0 auto 20px;
-    width: 50px; /* Short line like reference site */
+    width: 50px; /* Short line like reference site, adjusted by JS */
 }
 
 .event {
     display: flex;
     margin-bottom: 20px;
+    transition: background 0.3s ease; /* Smooth hover transition */
 }
 
 .event-time {
@@ -289,6 +301,12 @@ body {
 .event-details p {
     font-size: 16px;
     line-height: 1.4;
+}
+
+/* Event hover effect */
+.event.highlight {
+    background: rgba(212, 165, 165, 0.1); /* Subtle pink tint */
+    transition: background 0.3s ease;
 }
 
 /* Timeline Styles (unchanged, kept for reference) */
@@ -574,8 +592,12 @@ body {
         width: 100%;
         text-align: left;
         padding-right: 0;
-        margin-bottom: 5px;
+        margin-bottom: 5px; /* Adjusted by JS */
         font-size: 16px;
+    }
+
+    .event-details {
+        margin-left: 0; /* Adjusted by JS */
     }
 
     .event-details h4 {
@@ -584,6 +606,10 @@ body {
 
     .event-details p {
         font-size: 14px;
+    }
+
+    .event.highlight {
+        background: rgba(212, 165, 165, 0.05); /* Lighter on mobile */
     }
 }
 
