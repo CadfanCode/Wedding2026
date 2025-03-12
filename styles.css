@@ -306,36 +306,6 @@ body {
 
 /* Mobile Adjustments */
 @media (max-width: 768px) {
-    .timeline {
-        gap: 20px;
-        padding: 15px 0;
-    }
-
-    .timeline-item {
-        padding: 15px 20px 15px 40px; /* Adjusted for smaller screens */
-    }
-
-    .timeline-item h3 {
-        font-size: 1.25em;
-    }
-
-    .timeline-item p {
-        font-size: 0.9em;
-    }
-
-    .timeline::before {
-        left: 15px;
-    }
-
-    .timeline-item::before {
-        left: 5px;
-        width: 15px; /* Adjust for mobile */
-        height: 15px;
-    }
-}
-
-/* Mobile Adjustments */
-@media (max-width: 768px) {
     .container {
         max-width: 100%;
         padding: 0 15px;
@@ -409,6 +379,33 @@ body {
 
     .section h2 {
         font-size: 28px;
+    }
+
+    .timeline {
+        gap: 20px;
+        padding: 15px 0;
+    }
+
+    .timeline-item {
+        padding: 15px 20px 15px 40px; /* Adjusted for smaller screens */
+    }
+
+    .timeline-item h3 {
+        font-size: 1.25em;
+    }
+
+    .timeline-item p {
+        font-size: 0.9em;
+    }
+
+    .timeline::before {
+        left: 15px;
+    }
+
+    .timeline-item::before {
+        left: 5px;
+        width: 15px; /* Adjust for mobile */
+        height: 15px;
     }
 }
 
