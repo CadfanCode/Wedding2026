@@ -169,7 +169,7 @@ body {
 .hero,
 .section {
     text-align: center;
-    background: #fff;
+    background: #fff; /* White background */
     width: 100%;
     position: absolute;
     top: 0; /* All start at top, visibility toggled */
@@ -218,10 +218,6 @@ body {
     font-family: 'Playfair Display', serif;
     font-size: 24px;
     font-weight: 400;
-}
-
-.section {
-    /* No min-height here, let content dictate */
 }
 
 .section h2 {
@@ -419,6 +415,7 @@ body {
     margin: 0 auto;
     font-family: 'Poppins', sans-serif;
     font-weight: 300;
+    padding-bottom: 20px; /* Ensures bottom spacing */
 }
 
 .section-content img {
@@ -488,7 +485,7 @@ body {
 /* Mobile Adjustments for Travel & Accommodation */
 @media (max-width: 768px) {
     .section-content {
-        padding: 0 15px;
+        padding: 0 15px 20px;
     }
 
     .section-content img {
