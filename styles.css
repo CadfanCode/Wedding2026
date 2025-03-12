@@ -238,7 +238,7 @@ body {
 .timeline {
     display: flex;
     flex-direction: column;
-    gap: 30px; /* Increased gap for elegance */
+    gap: 40px; /* Increased spacing for clarity */
     position: relative;
     padding: 20px 0;
     max-width: 800px; /* Matches .section-content width */
@@ -248,58 +248,49 @@ body {
 .timeline::before {
     content: '';
     position: absolute;
-    left: 20px; /* Align with item content */
+    left: 15px; /* Adjusted for dot alignment */
     top: 0;
     bottom: 0;
     width: 2px;
-    background: linear-gradient(to bottom, #d4a5a5 0%, #d4a5a5 50%, transparent 100%); /* Subtle gradient fade */
+    background: #d4a5a5; /* Solid color, no gradient */
     z-index: 0; /* Behind items */
 }
 
 .timeline-item {
-    background: linear-gradient(135deg, #ffffff 0%, #f9f9f9 100%); /* Subtle gradient */
-    padding: 20px 25px 20px 50px; /* Extra left padding for arrow */
-    border-radius: 12px; /* Softer corners */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    display: flex;
+    align-items: center; /* Align time and description horizontally */
+    padding: 0 0 0 40px; /* Space for dot */
     position: relative;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Interactivity */
     z-index: 1; /* Above line */
 }
 
-.timeline-item:hover {
-    transform: translateY(-5px); /* Lift on hover */
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Enhanced shadow on hover */
-}
-
 .timeline-item::before {
-    content: url('/images/sketched-arrow.png'); /* Replace with your sketched arrow image */
+    content: '';
     position: absolute;
-    left: 10px;
+    left: 10px; /* Center dot on line */
     top: 50%;
     transform: translateY(-50%);
-    width: 20px; /* Adjust based on your image */
-    height: 20px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #d4a5a5; /* Matching line color */
     z-index: 1;
-    /* Fallback if no image: */
-    /* content: ''; */
-    /* width: 12px; */
-    /* height: 12px; */
-    /* border-radius: 50%; */
-    /* background: #d4a5a5; */
 }
 
 .timeline-item h3 {
-    font-family: 'Playfair Display', serif; /* Elegant font */
-    font-size: 1.5em;
-    color: #3f3f3f; /* Neutral, elegant color */
-    margin-bottom: 8px;
+    font-family: 'Playfair Display', serif;
+    font-size: 24px; /* Larger for emphasis */
+    font-weight: 700; /* Bold like reference site */
+    color: #3f3f3f;
+    margin-right: 20px; /* Space between time and description */
+    min-width: 100px; /* Consistent width for alignment */
 }
 
 .timeline-item p {
     font-family: 'Poppins', sans-serif;
-    font-size: 1em;
+    font-size: 18px;
     color: #666;
-    line-height: 1.4;
+    line-height: 1.6;
 }
 
 /* Section Content Styles */
@@ -474,30 +465,31 @@ body {
     }
 
     .timeline {
-        gap: 20px;
+        gap: 30px;
         padding: 15px 0;
     }
 
-    .timeline-item {
-        padding: 15px 20px 15px 40px; /* Adjusted for smaller screens */
-    }
-
-    .timeline-item h3 {
-        font-size: 1.25em;
-    }
-
-    .timeline-item p {
-        font-size: 0.9em;
-    }
-
     .timeline::before {
-        left: 15px;
+        left: 10px;
+    }
+
+    .timeline-item {
+        padding: 0 0 0 30px; /* Adjusted for smaller screens */
     }
 
     .timeline-item::before {
         left: 5px;
-        width: 15px; /* Adjust for mobile */
-        height: 15px;
+        width: 10px;
+        height: 10px;
+    }
+
+    .timeline-item h3 {
+        font-size: 20px;
+        min-width: 80px;
+    }
+
+    .timeline-item p {
+        font-size: 16px;
     }
 }
 
