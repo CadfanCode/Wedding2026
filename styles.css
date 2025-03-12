@@ -247,7 +247,7 @@ body {
 
 /* Schedule List Styles */
 .schedule-list {
-    /*max-width: 800px; /* Matches .section-content width */
+    max-width: 800px; /* Matches .section-content width */
     margin: 0 auto;
     padding: 20px 0;
 }
@@ -390,7 +390,7 @@ body {
 .section-content img {
     display: block; /* Ensures it’s a block element for centering */
     max-width: 100%; /* Scales to fit container */
-    width: 800px; /* Matches max-width of .section-content */
+    /*width: 800px; /* Matches max-width of .section-content */
     height: auto; /* Maintains aspect ratio */
     margin: 0 auto 20px; /* Centers and adds spacing below */
     border-radius: 8px; /* Optional: subtle rounding for elegance */
