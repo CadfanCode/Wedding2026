@@ -240,50 +240,98 @@ body {
 .timeline {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-}
-
-.timeline-item {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    gap: 30px; /* Increased gap for elegance */
     position: relative;
+    padding: 20px 0;
+    max-width: 800px; /* Matches .section-content width */
+    margin: 0 auto;
 }
 
-.timeline-item h3 {
-    font-size: 1.5em;
-    color: #0077b6;
-    margin-bottom: 10px;
-}
-
-.timeline-item p {
-    font-size: 1em;
-    color: #555;
-}
-
-/* Optional: Add a vertical line to create a timeline effect */
 .timeline::before {
     content: '';
     position: absolute;
-    left: 50%;
+    left: 20px; /* Align with item content */
     top: 0;
     bottom: 0;
     width: 2px;
-    background-color: #0077b6;
-    transform: translateX(-50%);
+    background: linear-gradient(to bottom, #d4a5a5 0%, #d4a5a5 50%, transparent 100%); /* Subtle gradient fade */
+    z-index: 0; /* Behind items */
+}
+
+.timeline-item {
+    background: linear-gradient(135deg, #ffffff 0%, #f9f9f9 100%); /* Subtle gradient */
+    padding: 20px 25px 20px 50px; /* Extra left padding for arrow */
+    border-radius: 12px; /* Softer corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Interactivity */
+    z-index: 1; /* Above line */
+}
+
+.timeline-item:hover {
+    transform: translateY(-5px); /* Lift on hover */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Enhanced shadow on hover */
 }
 
 .timeline-item::before {
-    content: '';
+    content: url('/images/sketched-arrow.png'); /* Replace with your sketched arrow image */
     position: absolute;
-    left: -15px;
+    left: 10px;
     top: 50%;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: #0077b6;
     transform: translateY(-50%);
+    width: 20px; /* Adjust based on your image */
+    height: 20px;
+    z-index: 1;
+    /* Fallback if no image: */
+    /* content: ''; */
+    /* width: 12px; */
+    /* height: 12px; */
+    /* border-radius: 50%; */
+    /* background: #d4a5a5; */
+}
+
+.timeline-item h3 {
+    font-family: 'Playfair Display', serif; /* Elegant font */
+    font-size: 1.5em;
+    color: #3f3f3f; /* Neutral, elegant color */
+    margin-bottom: 8px;
+}
+
+.timeline-item p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+    color: #666;
+    line-height: 1.4;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .timeline {
+        gap: 20px;
+        padding: 15px 0;
+    }
+
+    .timeline-item {
+        padding: 15px 20px 15px 40px; /* Adjusted for smaller screens */
+    }
+
+    .timeline-item h3 {
+        font-size: 1.25em;
+    }
+
+    .timeline-item p {
+        font-size: 0.9em;
+    }
+
+    .timeline::before {
+        left: 15px;
+    }
+
+    .timeline-item::before {
+        left: 5px;
+        width: 15px; /* Adjust for mobile */
+        height: 15px;
+    }
 }
 
 /* Mobile Adjustments */
