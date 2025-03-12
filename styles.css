@@ -14,7 +14,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    overflow-y: auto;
+    overflow-y: auto; /* Page-level scrolling */
 }
 
 .container {
@@ -34,7 +34,6 @@ body {
     z-index: 1000;
 }
 
-/* Default (Desktop): Stack vertically */
 .header-inner {
     max-width: 1200px;
     margin: 0 auto;
@@ -164,28 +163,29 @@ body {
     margin-top: 80px; /* Matches header height */
     padding: 0;
     position: relative;
+    background: #fff; /* White background for content area */
+    overflow-y: auto; /* Enable scrolling within content */
 }
 
 .hero,
 .section {
     text-align: center;
-    background: #fff;
     width: 100%;
-    position: absolute;
-    top: 100%; /* Off-screen by default */
-    left: 0;
-    transition: top 0.5s ease;
-    padding: 100px 20px 20px; /* Increased top padding to clear header */
-    display: flex;
+    padding: 100px 20px 20px; /* Top padding to clear header */
+    display: none; /* Hidden by default */
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
 }
 
+.hero.active,
+.section.active {
+    display: flex; /* Show active section */
+}
+
 /* First section visible by default */
 .hero#home {
-    top: 0;
-    display: flex;
+    display: flex; /* Visible on load */
     flex-direction: row;
     justify-content: center;
     align-items: center;
@@ -215,16 +215,6 @@ body {
     font-family: 'Playfair Display', serif;
     font-size: 24px;
     font-weight: 400;
-}
-
-.section {
-    /* Removed min-height to let content determine height */
-    overflow-y: auto; /* Option 1: Scroll within section */
-}
-
-/* Ensure active section is fully visible */
-.section[style*="top: 0"] {
-    height: auto; /* Let content dictate height */
 }
 
 .section h2 {
@@ -309,7 +299,7 @@ body {
     }
 
     .section {
-        padding: 80px 15px 20px; /* Adjusted for mobile */
+        padding: 80px 15px 20px;
     }
 
     .section h2 {

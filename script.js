@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
         navbar.classList.toggle('active');
     });
 
-    // Smooth section transition
+    // Section toggle
     const navLinks = document.querySelectorAll('.nav-link');
     const sections = document.querySelectorAll('.hero, .section');
     
@@ -24,11 +24,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetId = this.getAttribute('href').substring(1); // Remove '#'
             const targetSection = document.getElementById(targetId);
             
-            // Move all sections off-screen except the target
+            // Hide all sections, show the target
             sections.forEach(section => {
-                section.style.top = '100%'; // Move off-screen
+                section.classList.remove('active');
             });
-            targetSection.style.top = '0'; // Move target to top
+            targetSection.classList.add('active');
 
             // Close mobile menu if open
             if (navbar.classList.contains('active')) {
@@ -39,5 +39,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Ensure 'home' is visible on load
-    document.getElementById('home').style.top = '0';
+    document.getElementById('home').classList.add('active');
 });
