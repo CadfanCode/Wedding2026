@@ -15,7 +15,6 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     overflow-y: auto;
-    height: 100vh;
 }
 
 .container {
@@ -165,15 +164,12 @@ body {
     margin-top: 80px; /* Matches header height */
     padding: 0;
     position: relative;
-    height: calc(100vh - 80px);
-    overflow: hidden;
 }
 
 .hero,
 .section {
     text-align: center;
     background: #fff;
-    height: 100%;
     width: 100%;
     position: absolute;
     top: 100%;
@@ -222,6 +218,7 @@ body {
     flex-direction: column;
     justify-content: flex-start; /* Changed to flex-start to avoid centering */
     align-items: center;
+    min-height: calc(100vh - 80px); /* Ensures at least full viewport height, but can grow */
 }
 
 .section h2 {
