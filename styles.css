@@ -309,7 +309,7 @@ h5 {
     color: #3f3f3f;
 }
 
-/* Schedule Section */
+/* Schedule Section - Reverted Layout */
 .schedule-list {
     max-width: 800px;
     margin: 0 auto;
@@ -330,7 +330,7 @@ h5 {
 }
 
 .day-line {
-    display: none;
+    display: none; /* Original setting */
 }
 
 .events-container {
