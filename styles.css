@@ -343,9 +343,9 @@ h5 {
 
 .event {
     display: flex;
-    align-items: center; /* Center vertically relative to .event-details */
+    align-items: center;
     margin-bottom: 20px;
-    padding: 5px 15px 15px 15px; /* top right bottom left */
+    padding: 2px 15px 15px 15px; /* Reduced top padding to 2px */
     background: rgba(255, 255, 255, 0.9);
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -353,6 +353,14 @@ h5 {
     min-height: 80px;
 }
 
+.event-details h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: #3f3f3f;
+    margin-bottom: 5px;
+    margin-top: 0; /* Remove default top margin */
+}
 .event:hover {
     transform: translateY(-5px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
@@ -375,14 +383,6 @@ h5 {
 .event-details {
     flex: 1;
     min-width: 0;
-}
-
-.event-details h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 24px;
-    font-weight: 400;
-    color: #3f3f3f;
-    margin-bottom: 5px;
 }
 
 .event-details p {
