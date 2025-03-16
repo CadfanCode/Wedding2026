@@ -2,19 +2,19 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif; /* Default to Poppins for consistency */
 }
 
 body {
     line-height: 1.6;
-    color: #333;
+    color: #666; /* Default body text color */
     background-color: #f9f9f9;
     background-image: url('/images/Kungsleden4.jpg');
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    overflow-y: auto; /* Page-level scrolling */
+    overflow-y: auto;
 }
 
 .container {
@@ -133,6 +133,7 @@ body {
     color: #666;
     font-size: 16px;
     font-weight: 500;
+    font-family: 'Poppins', sans-serif;
     position: relative;
     padding: 8px 15px;
     transition: all 0.3s ease;
@@ -160,35 +161,34 @@ body {
 }
 
 .content {
-    margin-top: 80px; /* Matches header height */
+    margin-top: 80px;
     padding: 0;
     position: relative;
-    min-height: calc(100vh - 80px); /* Ensure content area fills viewport */
+    min-height: calc(100vh - 80px);
 }
 
 .hero,
 .section {
     text-align: center;
-    background: #fff; /* White background */
+    background: #fff;
     width: 100%;
     position: absolute;
-    top: 0; /* All start at top, visibility toggled */
+    top: 0;
     left: 0;
-    display: none; /* Hidden by default */
+    display: none;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding: 100px 20px 20px; /* Top padding to clear header */
-    z-index: 1; /* Ensure stacking order */
+    padding: 100px 20px 20px;
+    z-index: 1;
 }
 
 .hero.active,
 .section.active {
-    display: flex; /* Show active section */
-    z-index: 2; /* Bring active section to front */
+    display: flex;
+    z-index: 2;
 }
 
-/* Fade-in animation */
 .section.fade-in,
 .hero.fade-in {
     animation: fadeIn 0.5s ease-in;
@@ -199,9 +199,84 @@ body {
     to { opacity: 1; }
 }
 
-/* Home section specific styling */
+/* Global Font Settings Aligned with Travel */
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    color: #3f3f3f;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    color: #3f3f3f;
+    font-weight: 400;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: #666;
+    font-weight: 400;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+h5 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: #666;
+    font-weight: 400;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.section-content {
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    padding-bottom: 20px;
+    width: 100%;
+}
+
+.section-content p,
+.section-content li {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.section-content a {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.section-content a:hover {
+    text-decoration: underline;
+}
+
+.section-content img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto 20px;
+    border-radius: 8px;
+}
+
+/* Home Section */
 .hero#home {
-    min-height: calc(100vh - 80px); /* Full viewport minus header */
+    min-height: calc(100vh - 80px);
     flex-direction: row;
     justify-content: center;
     align-items: center;
@@ -217,13 +292,13 @@ body {
 
 .hero .text-content {
     text-align: left;
-    color: #3f3f3f;
 }
 
 .hero .date {
     font-family: 'Playfair Display', serif;
     font-size: 36px;
     font-weight: 400;
+    color: #3f3f3f;
     margin-bottom: 10px;
 }
 
@@ -231,16 +306,10 @@ body {
     font-family: 'Playfair Display', serif;
     font-size: 24px;
     font-weight: 400;
-}
-
-.section h2 {
-    font-size: 36px;
     color: #3f3f3f;
-    margin-bottom: 20px;
-    font-family: 'Playfair Display', serif;
 }
 
-/* Updated Schedule List Styles */
+/* Schedule Section */
 .schedule-list {
     max-width: 800px;
     margin: 0 auto;
@@ -248,7 +317,7 @@ body {
 }
 
 .schedule-day {
-    margin-bottom: 40px; /* Space between days */
+    margin-bottom: 40px;
 }
 
 .day-title {
@@ -256,12 +325,12 @@ body {
     font-size: 28px;
     color: #3f3f3f;
     text-align: center;
-    margin-bottom: 20px; /* More space below the title */
-    position: relative; /* For alignment reference */
+    margin-bottom: 20px;
+    position: relative;
 }
 
 .day-line {
-    display: none; /* Removed as it conflicts with the new design */
+    display: none;
 }
 
 .events-container {
@@ -270,66 +339,71 @@ body {
 
 .event {
     display: flex;
-    align-items: flex-start; /* Align items at the top */
+    align-items: flex-start;
     margin-bottom: 20px;
-    padding: 15px; /* Add padding for a card-like effect */
-    background: rgba(255, 255, 255, 0.9); /* Slight white overlay for readability */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    min-height: 100px; /* Ensure enough vertical space to prevent overlap */
+    min-height: 100px;
 }
 
 .event:hover {
-    transform: translateY(-5px); /* Lift effect on hover */
+    transform: translateY(-5px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    background: rgba(212, 165, 165, 0.1); /* Retain subtle pink tint on hover */
+    background: rgba(212, 165, 165, 0.1);
 }
 
 .event-time {
-    width: 150px; /* Increased width to accommodate longer times */
+    width: 150px;
     font-family: 'Playfair Display', serif;
     font-size: 16px;
     font-weight: 700;
-    color: #999; /* Softer color for times */
+    color: #999;
     text-align: left;
     padding-right: 20px;
-    margin-right: 20px; /* Add margin to prevent overlap */
-    margin-top: 2px; /* Fine-tune vertical alignment */
-    white-space: nowrap; /* Prevent wrapping */
-    flex-shrink: 0; /* Prevent the time from shrinking */
+    margin-right: 20px;
+    margin-top: 2px;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .event-details {
     flex: 1;
-    font-family: 'Poppins', sans-serif;
-    color: #666;
-    text-align: left;
-    min-width: 0; /* Allow the details to wrap properly */
+    min-width: 0;
 }
 
-.event-details h4 {
+.event-details h3 {
     font-family: 'Playfair Display', serif;
-    font-size: 18px;
+    font-size: 24px; /* Match Travel h3 */
     font-weight: 400;
     color: #3f3f3f;
     margin-bottom: 5px;
 }
 
 .event-details p {
+    font-family: 'Poppins', sans-serif;
     font-size: 16px;
+    color: #666;
     line-height: 1.5;
     margin-bottom: 10px;
+    font-weight: 300; /* Match Travel */
 }
 
 .event-details h5 {
-    font-size: 16px;
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
     color: #666;
     margin-top: 10px;
+    font-weight: 400;
 }
 
 .event-details a {
-    color: #d4a5a5; /* Matching theme color */
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: #333; /* Match Travel */
+    font-weight: bold;
     text-decoration: none;
 }
 
@@ -337,36 +411,36 @@ body {
     text-decoration: underline;
 }
 
-/* Timeline Styles */
+/* Timeline (if used) */
 .timeline {
     display: flex;
     flex-direction: column;
-    gap: 30px; /* Increased gap for elegance */
+    gap: 30px;
     position: relative;
     padding: 20px 0;
-    max-width: 800px; /* Matches .section-content width */
+    max-width: 800px;
     margin: 0 auto;
 }
 
 .timeline::before {
     content: '';
     position: absolute;
-    left: 20px; /* Align with item content */
+    left: 20px;
     top: 0;
     bottom: 0;
     width: 2px;
     background: linear-gradient(to bottom, #d4a5a5 0%, #d4a5a5 50%, transparent 100%);
-    z-index: 0; /* Behind items */
+    z-index: 0;
 }
 
 .timeline-item {
     background: linear-gradient(135deg, #ffffff 0%, #f9f9f9 100%);
-    padding: 20px 25px 20px 50px; /* Extra left padding for arrow */
+    padding: 20px 25px 20px 50px;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     position: relative;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    z-index: 1; /* Above line */
+    z-index: 1;
 }
 
 .timeline-item:hover {
@@ -386,114 +460,43 @@ body {
 }
 
 .timeline-item h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    color: #3f3f3f;
+    font-weight: 400;
     margin-bottom: 8px;
-    font-size: 24px;
-    color: #3f3f3f;
-    font-family: 'Playfair Display', serif;
-    font-weight: 400;
 }
 
-.timeline-item p {c
-    color: #3f3f3f;
-    line-height: 1.4;
-}
-
-/* Section Content Styles */
-.section-content {
-    text-align: left;
-    max-width: 800px;
-    margin: 0 auto;
+.timeline-item p {
     font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: #666;
+    line-height: 1.4;
     font-weight: 300;
-    padding-bottom: 20px; /* Ensures bottom spacing */
-    width: 100%; /* Ensure it takes full available width up to max */
 }
 
-.section-content img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    margin: 0 auto 20px;
-    border-radius: 8px;
-}
-
-.section-content h3 {
-    font-size: 24px;
-    color: #3f3f3f;
-    margin-top: 30px;
-    margin-bottom: 10px;
-    font-family: 'Playfair Display', serif;
-    font-weight: 400;
-}
-
-.section-content h4 {
-    font-size: 20px;
-    color: #666;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    font-family: 'Playfair Display', serif;
-    font-weight: 400;
-}
-
-.section-content h5 {
-    font-size: 18px;
-    color: #666;
-    margin-top: 15px;
-    margin-bottom: 5px;
-    font-family: 'Playfair Display', serif;
-    font-weight: 400;
-}
-
-.travel-option {
-    margin-bottom: 20px;
-}
-
-.travel-option p {
-    margin-bottom: 10px;
-}
-
-.travel-option ul {
-    list-style-type: disc;
-    margin-left: 20px;
-    margin-bottom: 10px;
-}
-
-.travel-option li {
-    margin-bottom: 5px;
-}
-
-.section-content a {
-    color: #333;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-.section-content a:hover {
-    text-decoration: underline;
-}
-
-/* RSVP Section Specific Styling */
+/* RSVP Section */
 #rsvp.section {
-    position: absolute; /* For toggle behavior */
-    height: auto; /* Allow natural growth */
-    min-height: 0; /* No minimum height restriction */
-    background: #fff; /* Keep white background, or set to transparent if preferred */
+    position: absolute;
+    height: auto;
+    min-height: 0;
+    background: #fff;
 }
 
 #rsvp .section-content {
-    padding: 0; /* Remove padding to let iframe sit flush */
-    max-width: 800px; /* Match other sections */
-    margin: 0 auto; /* Centered */
-    background: transparent; /* Remove white box if unwanted */
+    padding: 0;
+    max-width: 800px;
+    margin: 0 auto;
+    background: transparent;
 }
 
 #rsvp iframe {
-    width: 100%; /* Take full width of .section-content (up to 800px) */
-    max-width: 800px; /* Cap at 800px to match other content */
-    height: 1500px; /* Fixed height - adjust based on form length */
-    border: none; /* No border */
-    display: block; /* Block element */
-    margin: 0 auto; /* Center within container */
+    width: 100%;
+    max-width: 800px;
+    height: 1500px;
+    border: none;
+    display: block;
+    margin: 0 auto;
 }
 
 /* Mobile Adjustments */
@@ -569,7 +572,7 @@ body {
         padding: 80px 15px 20px;
     }
 
-    .section h2 {
+    h2 {
         font-size: 28px;
     }
 
@@ -578,46 +581,7 @@ body {
     }
 
     .section-content img {
-        width: 100%; /* Full width on mobile, respecting padding */
-    }
-
-    .section-content h3 {
-        font-size: 20px;
-    }
-
-    .section-content h4 {
-        font-size: 18px;
-    }
-
-    .section-content h5 {
-        font-size: 16px;
-    }
-
-    .timeline {
-        gap: 20px;
-        padding: 15px 0;
-    }
-
-    .timeline-item {
-        padding: 15px 20px 15px 40px; /* Adjusted for smaller screens */
-    }
-
-    .timeline-item h3 {
-        font-size: 1.25em;
-    }
-
-    .timeline-item p {
-        font-size: 0.9em;
-    }
-
-    .timeline::before {
-        left: 15px;
-    }
-
-    .timeline-item::before {
-        left: 5px;
-        width: 15px; /* Adjust for mobile */
-        height: 15px;
+        width: 100%;
     }
 
     .schedule-list {
@@ -643,7 +607,7 @@ body {
         width: 100%;
         text-align: left;
         margin-bottom: 5px;
-        margin-right: 0; /* Reset margin for mobile */
+        margin-right: 0;
         font-size: 14px;
     }
 
@@ -651,30 +615,25 @@ body {
         margin-left: 0;
     }
 
-    .event-details h4 {
-        font-size: 16px;
+    .event-details h3 {
+        font-size: 20px; /* Adjusted for mobile */
     }
 
     .event-details p {
         font-size: 14px;
     }
 
-    .event:hover {
-        background: rgba(212, 165, 165, 0.05); /* Lighter on mobile */
-    }
-
-    /* RSVP Mobile Adjustments */
     #rsvp .section-content {
-        padding: 0 15px; /* Match mobile padding of other sections */
-        max-width: 100%; /* Full width on mobile */
+        padding: 0 15px;
+        max-width: 100%;
     }
 
     #rsvp iframe {
-        width: 100%; /* Full width on mobile */
-        max-width: 100%; /* No cap on mobile */
-        height: 1500px; /* Adjust as needed for mobile */
+        width: 100%;
+        max-width: 100%;
+        height: 1500px;
     }
 }
 
-/* Import elegant fonts */
+/* Import Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&display=swap');
