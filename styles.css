@@ -603,7 +603,7 @@ h5 {
     .event {
         flex-direction: column; /* Revert to column for mobile */
         align-items: flex-start; /* Reset to top alignment for mobile */
-        padding: 10px;
+        padding: 3px;
         margin-bottom: 15px;
     }
 
@@ -628,7 +628,7 @@ h5 {
     }
 
     #rsvp .section-content {
-        padding: 0 15px;
+        padding: 0 15px; -->
         max-width: 100%;
     }
 
