@@ -387,6 +387,9 @@ body {
     padding-bottom: 20px; /* Ensures bottom spacing */
 }
 
+#rsvp .section-content {
+    padding: 0; /* Override padding for RSVP to keep iframe flush */
+}
 .section-content img {
     display: block; /* Ensures it’s a block element for centering */
     max-width: 100%; /* Scales to fit container */
@@ -531,6 +534,18 @@ body {
     .section-content {
         padding: 0 15px 20px;
     }
+    .section-content {
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    padding-bottom: 20px; /* Consistent with other sections */
+}
+
+#rsvp .section-content {
+    padding: 0; /* Override padding for RSVP to keep iframe flush */
+}
 
     .section-content img {
         width: 100%; /* Full width on mobile, respecting padding */
@@ -617,30 +632,33 @@ body {
     .event.highlight {
         background: rgba(212, 165, 165, 0.05); /* Lighter on mobile */
     }
-    /* RSVP Section Specific Styling */
+    /* RSVP Section Specific Styling *//* RSVP Section Specific Styling */
 #rsvp .section-content {
-    padding: 0; /* Remove padding to avoid extra space */
+    padding: 0; /* Keep this to avoid extra spacing */
+    max-width: 800px; /* Match other sections' content width */
+    margin: 0 auto; /* Center it like other sections */
 }
 
 #rsvp iframe {
-    width: 100%; /* Maintain full width */
-    height: 1000px; /* Initial height estimate - adjust as needed */
-    border: none; /* Remove border */
+    width: 100%; /* Full width of its container (up to 800px) */
+    border: none; /* No border */
     display: block; /* Ensure it behaves as a block element */
+    height: auto; /* Let the iframe height adjust to content - we'll refine this below */
+}
+
+/* Remove the fixed height in media query as well */
+@media (max-width: 768px) {
+    #rsvp iframe {
+        width: 100%; /* Still full width on mobile */
+        height: auto; /* No fixed height on mobile either */
+    }
 }
 
 /* Ensure the section itself doesn’t restrict the iframe */
 #rsvp.section.active {
-    position: static; /* Override absolute positioning to allow natural flow */
+    position: absolute; /* Keep absolute positioning for section toggle behavior */
     height: auto; /* Allow the section to grow with content */
     min-height: 0; /* Remove min-height constraint */
-}
-
-/* Mobile adjustments */
-@media (max-width: 768px) {
-    #rsvp iframe {
-        height: 1200px; /* Slightly taller for mobile if needed - adjust as needed */
-    }
 }
 }
 

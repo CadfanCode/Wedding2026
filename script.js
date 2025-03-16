@@ -107,4 +107,32 @@ document.addEventListener('DOMContentLoaded', () => {
     if (document.querySelector('#schedule.active')) {
         enhanceSchedule();
     }
+    document.addEventListener('DOMContentLoaded', () => {
+        // ... (existing code remains unchanged)
+    
+        // RSVP iframe adjustment
+        function adjustRSVPIframe() {
+            const rsvpIframe = document.querySelector('#rsvp iframe');
+            if (rsvpIframe) {
+                // Google Forms doesn’t reliably send height, so set a reasonable max height
+                rsvpIframe.style.height = '1500px'; // Adjust this value based on your form’s approximate length
+                rsvpIframe.style.minHeight = '100%'; // Ensure it fills the container
+            }
+        }
+    
+        // Run on load if RSVP is active
+        if (document.querySelector('#rsvp.active')) {
+            adjustRSVPIframe();
+        }
+    
+        // Run when RSVP section is activated
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                // ... (existing code)
+                if (targetId === 'rsvp') {
+                    adjustRSVPIframe();
+                }
+            });
+        });
+    });
 });
