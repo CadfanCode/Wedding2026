@@ -314,7 +314,7 @@ h5 {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px 0;
-    text-align: center; /* Ensure centering at the list level */
+    text-align: center;
 }
 
 .schedule-day {
@@ -343,7 +343,7 @@ h5 {
 
 .event {
     display: flex;
-    align-items: flex-start;
+    align-items: center; /* Center vertically relative to .event-details */
     margin-bottom: 20px;
     padding: 15px;
     background: rgba(255, 255, 255, 0.9);
@@ -370,7 +370,6 @@ h5 {
     margin-right: 20px;
     white-space: nowrap;
     flex-shrink: 0;
-    /* Removed margin-top: 2px to align with top */
 }
 
 .event-details {
@@ -384,7 +383,6 @@ h5 {
     font-weight: 400;
     color: #3f3f3f;
     margin-bottom: 5px;
-    margin-top: 0; /* Align with .event-time */
 }
 
 .event-details p {
@@ -603,7 +601,8 @@ h5 {
     }
 
     .event {
-        flex-direction: column;
+        flex-direction: column; /* Revert to column for mobile */
+        align-items: flex-start; /* Reset to top alignment for mobile */
         padding: 10px;
         margin-bottom: 15px;
     }
