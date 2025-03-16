@@ -52,6 +52,23 @@ document.addEventListener('DOMContentLoaded', () => {
     homeSection.classList.add('active');
     homeSection.classList.add('fade-in');
 
+    // Optional: RSVP iframe adjustment (static height set in CSS, but this ensures it loads)
+    function adjustRSVPIframe() {
+        const rsvpIframe = document.querySelector('#rsvp iframe');
+        if (rsvpIframe) {
+            rsvpIframe.style.width = '100%'; // Reinforce CSS
+            rsvpIframe.style.maxWidth = '800px'; // Match section-content
+        }
+    }
+
+    // Run enhancements if schedule or RSVP is active on load
+    if (document.querySelector('#schedule.active')) {
+        enhanceSchedule();
+    }
+    if (document.querySelector('#rsvp.active')) {
+        adjustRSVPIframe();
+    }
+
     // Schedule enhancement function
     function enhanceSchedule() {
         const scheduleSection = document.getElementById('schedule');
@@ -102,37 +119,4 @@ document.addEventListener('DOMContentLoaded', () => {
         adjustSpacing();
         window.addEventListener('resize', adjustSpacing);
     }
-
-    // Run enhancements if schedule is active on load (unlikely, but for robustness)
-    if (document.querySelector('#schedule.active')) {
-        enhanceSchedule();
-    }
-    document.addEventListener('DOMContentLoaded', () => {
-        // ... (existing code remains unchanged)
-    
-        // RSVP iframe adjustment
-        function adjustRSVPIframe() {
-            const rsvpIframe = document.querySelector('#rsvp iframe');
-            if (rsvpIframe) {
-                // Google Forms doesn’t reliably send height, so set a reasonable max height
-                rsvpIframe.style.height = '1500px'; // Adjust this value based on your form’s approximate length
-                rsvpIframe.style.minHeight = '100%'; // Ensure it fills the container
-            }
-        }
-    
-        // Run on load if RSVP is active
-        if (document.querySelector('#rsvp.active')) {
-            adjustRSVPIframe();
-        }
-    
-        // Run when RSVP section is activated
-        navLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                // ... (existing code)
-                if (targetId === 'rsvp') {
-                    adjustRSVPIframe();
-                }
-            });
-        });
-    });
 });

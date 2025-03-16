@@ -309,7 +309,7 @@ body {
     transition: background 0.3s ease;
 }
 
-/* Timeline Styles (unchanged, kept for reference) */
+/* Timeline Styles */
 .timeline {
     display: flex;
     flex-direction: column;
@@ -327,46 +327,40 @@ body {
     top: 0;
     bottom: 0;
     width: 2px;
-    background: linear-gradient(to bottom, #d4a5a5 0%, #d4a5a5 50%, transparent 100%); /* Subtle gradient fade */
+    background: linear-gradient(to bottom, #d4a5a5 0%, #d4a5a5 50%, transparent 100%);
     z-index: 0; /* Behind items */
 }
 
 .timeline-item {
-    background: linear-gradient(135deg, #ffffff 0%, #f9f9f9 100%); /* Subtle gradient */
+    background: linear-gradient(135deg, #ffffff 0%, #f9f9f9 100%);
     padding: 20px 25px 20px 50px; /* Extra left padding for arrow */
-    border-radius: 12px; /* Softer corners */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     position: relative;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Interactivity */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     z-index: 1; /* Above line */
 }
 
 .timeline-item:hover {
-    transform: translateY(-5px); /* Lift on hover */
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Enhanced shadow on hover */
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
 }
 
 .timeline-item::before {
-    content: url('/images/sketched-arrow.png'); /* Replace with your sketched arrow image */
+    content: url('/images/sketched-arrow.png');
     position: absolute;
     left: 10px;
     top: 50%;
     transform: translateY(-50%);
-    width: 20px; /* Adjust based on your image */
+    width: 20px;
     height: 20px;
     z-index: 1;
-    /* Fallback if no image: */
-    /* content: ''; */
-    /* width: 12px; */
-    /* height: 12px; */
-    /* border-radius: 50%; */
-    /* background: #d4a5a5; */
 }
 
 .timeline-item h3 {
-    font-family: 'Playfair Display', serif; /* Elegant font */
+    font-family: 'Playfair Display', serif;
     font-size: 1.5em;
-    color: #3f3f3f; /* Neutral, elegant color */
+    color: #3f3f3f;
     margin-bottom: 8px;
 }
 
@@ -385,18 +379,15 @@ body {
     font-family: 'Poppins', sans-serif;
     font-weight: 300;
     padding-bottom: 20px; /* Ensures bottom spacing */
+    width: 100%; /* Ensure it takes full available width up to max */
 }
 
-#rsvp .section-content {
-    padding: 0; /* Override padding for RSVP to keep iframe flush */
-}
 .section-content img {
-    display: block; /* Ensures it’s a block element for centering */
-    max-width: 100%; /* Scales to fit container */
-    /*width: 800px; /* Matches max-width of .section-content */
-    height: auto; /* Maintains aspect ratio */
-    margin: 0 auto 20px; /* Centers and adds spacing below */
-    border-radius: 8px; /* Optional: subtle rounding for elegance */
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto 20px;
+    border-radius: 8px;
 }
 
 .section-content h3 {
@@ -452,6 +443,30 @@ body {
 
 .section-content a:hover {
     text-decoration: underline;
+}
+
+/* RSVP Section Specific Styling */
+#rsvp.section {
+    position: absolute; /* For toggle behavior */
+    height: auto; /* Allow natural growth */
+    min-height: 0; /* No minimum height restriction */
+    background: #fff; /* Keep white background, or set to transparent if preferred */
+}
+
+#rsvp .section-content {
+    padding: 0; /* Remove padding to let iframe sit flush */
+    max-width: 800px; /* Match other sections */
+    margin: 0 auto; /* Centered */
+    background: transparent; /* Remove white box if unwanted */
+}
+
+#rsvp iframe {
+    width: 100%; /* Take full width of .section-content (up to 800px) */
+    max-width: 800px; /* Cap at 800px to match other content */
+    height: 1500px; /* Fixed height - adjust based on form length */
+    border: none; /* No border */
+    display: block; /* Block element */
+    margin: 0 auto; /* Center within container */
 }
 
 /* Mobile Adjustments */
@@ -534,18 +549,6 @@ body {
     .section-content {
         padding: 0 15px 20px;
     }
-    .section-content {
-    text-align: left;
-    max-width: 800px;
-    margin: 0 auto;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 300;
-    padding-bottom: 20px; /* Consistent with other sections */
-}
-
-#rsvp .section-content {
-    padding: 0; /* Override padding for RSVP to keep iframe flush */
-}
 
     .section-content img {
         width: 100%; /* Full width on mobile, respecting padding */
@@ -593,12 +596,6 @@ body {
     .schedule-list {
         padding: 15px 0;
     }
-    .schedule-img {
-        display: block;
-        max-width: 30%; /* Adjust size */
-        height: auto;
-        margin: 10px auto 0; /* Centers the image and adds space */
-    }
 
     .day-title {
         font-size: 24px;
@@ -632,34 +629,18 @@ body {
     .event.highlight {
         background: rgba(212, 165, 165, 0.05); /* Lighter on mobile */
     }
-    /* RSVP Section Specific Styling *//* RSVP Section Specific Styling */
-#rsvp .section-content {
-    padding: 0; /* Keep this to avoid extra spacing */
-    max-width: 800px; /* Match other sections' content width */
-    margin: 0 auto; /* Center it like other sections */
-}
 
-#rsvp iframe {
-    width: 100%; /* Full width of its container (up to 800px) */
-    border: none; /* No border */
-    display: block; /* Ensure it behaves as a block element */
-    height: auto; /* Let the iframe height adjust to content - we'll refine this below */
-}
-
-/* Remove the fixed height in media query as well */
-@media (max-width: 768px) {
-    #rsvp iframe {
-        width: 100%; /* Still full width on mobile */
-        height: auto; /* No fixed height on mobile either */
+    /* RSVP Mobile Adjustments */
+    #rsvp .section-content {
+        padding: 0 15px; /* Match mobile padding of other sections */
+        max-width: 100%; /* Full width on mobile */
     }
-}
 
-/* Ensure the section itself doesn’t restrict the iframe */
-#rsvp.section.active {
-    position: absolute; /* Keep absolute positioning for section toggle behavior */
-    height: auto; /* Allow the section to grow with content */
-    min-height: 0; /* Remove min-height constraint */
-}
+    #rsvp iframe {
+        width: 100%; /* Full width on mobile */
+        max-width: 100%; /* No cap on mobile */
+        height: 1500px; /* Adjust as needed for mobile */
+    }
 }
 
 /* Import elegant fonts */
