@@ -309,7 +309,7 @@ h5 {
     color: #3f3f3f;
 }
 
-/* Schedule Section - Explicitly Reverted to Original Layout */
+/* Schedule Section */
 .schedule-list {
     max-width: 800px;
     margin: 0 auto;
@@ -326,19 +326,19 @@ h5 {
     font-size: 28px;
     color: #3f3f3f;
     font-weight: 400;
-    text-align: center; /* Explicitly centered */
+    text-align: center;
     margin-bottom: 20px;
-    display: block; /* Ensure it’s a block element */
-    width: 100%; /* Full width for centering */
+    display: block;
+    width: 100%;
 }
 
 .day-line {
-    display: none; /* Original setting */
+    display: none;
 }
 
 .events-container {
     width: 100%;
-    text-align: left; /* Reset to left for events */
+    text-align: left;
 }
 
 .event {
@@ -368,9 +368,9 @@ h5 {
     text-align: left;
     padding-right: 20px;
     margin-right: 20px;
-    margin-top: 2px;
     white-space: nowrap;
     flex-shrink: 0;
+    /* Removed margin-top: 2px to align with top */
 }
 
 .event-details {
@@ -380,10 +380,11 @@ h5 {
 
 .event-details h3 {
     font-family: 'Playfair Display', serif;
-    font-size: 24px; /* Match Travel h3 */
+    font-size: 24px;
     font-weight: 400;
     color: #3f3f3f;
     margin-bottom: 5px;
+    margin-top: 0; /* Align with .event-time */
 }
 
 .event-details p {
@@ -392,7 +393,7 @@ h5 {
     color: #666;
     line-height: 1.5;
     margin-bottom: 10px;
-    font-weight: 300; /* Match Travel */
+    font-weight: 300;
 }
 
 .event-details h5 {
@@ -406,7 +407,7 @@ h5 {
 .event-details a {
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
-    color: #333; /* Match Travel */
+    color: #333;
     font-weight: bold;
     text-decoration: none;
 }
