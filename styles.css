@@ -308,7 +308,6 @@ h5 {
     font-weight: 400;
     color: #3f3f3f;
 }
-
 /* Schedule Section Styling */
 .schedule-list {
     max-width: 800px;
@@ -341,23 +340,18 @@ h5 {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
-    padding: 10px 20px;
-    background: #f8e8e8; /* Pastel pink */
+    padding: 5px 15px 15px 15px; /* Original padding */
+    background: rgba(255, 255, 255, 0.9);
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     min-height: 80px;
-    border-left: 6px solid #ffb6b6; /* Soft pink border */
-}
-
-.event:nth-child(even) {
-    background: #e8f8f8; /* Pastel blue */
-    border-left-color: #b6e6ff; /* Soft blue border */
 }
 
 .event:hover {
     transform: translateY(-5px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    background: rgba(212, 165, 165, 0.1);
 }
 
 .event-time {
@@ -365,7 +359,7 @@ h5 {
     font-family: 'Playfair Display', serif;
     font-size: 14px; /* Reduced size */
     font-weight: 700;
-    color: #666;
+    color: #999;
     text-align: left;
     padding-right: 20px;
     margin-right: 20px;
@@ -380,7 +374,7 @@ h5 {
 
 .event-details h3 {
     font-family: 'Playfair Display', serif;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 400;
     color: #3f3f3f;
     margin-bottom: 5px;
@@ -394,7 +388,6 @@ h5 {
     margin-bottom: 10px;
     font-weight: 300;
 }
-
 /* Timeline (if used) */
 .timeline {
     display: flex;
