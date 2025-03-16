@@ -240,16 +240,15 @@ body {
     font-family: 'Playfair Display', serif;
 }
 
-.section p {
-    font-size: 18px;
-    color: #666;
-}
-
-/* Schedule List Styles */
+/* Updated Schedule List Styles */
 .schedule-list {
-    max-width: 800px; /* Matches .section-content width */
+    max-width: 800px;
     margin: 0 auto;
     padding: 20px 0;
+}
+
+.schedule-day {
+    margin-bottom: 40px; /* Space between days */
 }
 
 .day-title {
@@ -257,37 +256,52 @@ body {
     font-size: 28px;
     color: #3f3f3f;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 20px; /* More space below the title */
+    position: relative; /* For alignment reference */
 }
 
 .day-line {
-    border: 0;
-    height: 1px;
-    background: #d4a5a5;
-    margin: 0 auto 20px;
-    width: 50px; /* Short line like reference site, adjusted by JS */
+    display: none; /* Removed as it conflicts with the new design */
+}
+
+.events-container {
+    width: 100%;
 }
 
 .event {
     display: flex;
+    align-items: flex-start; /* Align items at the top */
     margin-bottom: 20px;
-    transition: background 0.3s ease; /* Smooth hover transition */
+    padding: 15px; /* Add padding for a card-like effect */
+    background: rgba(255, 255, 255, 0.9); /* Slight white overlay for readability */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    background: rgba(212, 165, 165, 0.1); /* Retain subtle pink tint on hover */
 }
 
 .event-time {
-    width: 150px; /* Fixed width for timespan column */
+    width: 120px; /* Slightly narrower for offset effect */
     font-family: 'Playfair Display', serif;
-    font-size: 18px;
-    font-weight: 700; /* Bold like reference site */
-    color: #3f3f3f;
-    text-align: right;
+    font-size: 16px;
+    font-weight: 700;
+    color: #999; /* Softer color for times */
+    text-align: left;
     padding-right: 20px;
+    margin-top: 2px; /* Fine-tune vertical alignment */
+    white-space: nowrap; /* Prevent wrapping */
 }
 
 .event-details {
-    flex: 1; /* Takes remaining space */
+    flex: 1;
     font-family: 'Poppins', sans-serif;
     color: #666;
+    text-align: left;
 }
 
 .event-details h4 {
@@ -300,13 +314,23 @@ body {
 
 .event-details p {
     font-size: 16px;
-    line-height: 1.4;
+    line-height: 1.5;
+    margin-bottom: 10px;
 }
 
-/* Event hover effect */
-.event.highlight {
-    background: rgba(212, 165, 165, 0.1); /* Subtle pink tint */
-    transition: background 0.3s ease;
+.event-details h5 {
+    font-size: 16px;
+    color: #666;
+    margin-top: 10px;
+}
+
+.event-details a {
+    color: #d4a5a5; /* Matching theme color */
+    text-decoration: none;
+}
+
+.event-details a:hover {
+    text-decoration: underline;
 }
 
 /* Timeline Styles */
@@ -597,25 +621,30 @@ body {
         padding: 15px 0;
     }
 
+    .schedule-day {
+        margin-bottom: 30px;
+    }
+
     .day-title {
         font-size: 24px;
+        margin-bottom: 15px;
     }
 
     .event {
         flex-direction: column;
+        padding: 10px;
         margin-bottom: 15px;
     }
 
     .event-time {
         width: 100%;
         text-align: left;
-        padding-right: 0;
-        margin-bottom: 5px; /* Adjusted by JS */
-        font-size: 16px;
+        margin-bottom: 5px;
+        font-size: 14px;
     }
 
     .event-details {
-        margin-left: 0; /* Adjusted by JS */
+        margin-left: 0;
     }
 
     .event-details h4 {
@@ -626,7 +655,7 @@ body {
         font-size: 14px;
     }
 
-    .event.highlight {
+    .event:hover {
         background: rgba(212, 165, 165, 0.05); /* Lighter on mobile */
     }
 
