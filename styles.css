@@ -617,6 +617,31 @@ body {
     .event.highlight {
         background: rgba(212, 165, 165, 0.05); /* Lighter on mobile */
     }
+    /* RSVP Section Specific Styling */
+#rsvp .section-content {
+    padding: 0; /* Remove padding to avoid extra space */
+}
+
+#rsvp iframe {
+    width: 100%; /* Maintain full width */
+    height: 1000px; /* Initial height estimate - adjust as needed */
+    border: none; /* Remove border */
+    display: block; /* Ensure it behaves as a block element */
+}
+
+/* Ensure the section itself doesn’t restrict the iframe */
+#rsvp.section.active {
+    position: static; /* Override absolute positioning to allow natural flow */
+    height: auto; /* Allow the section to grow with content */
+    min-height: 0; /* Remove min-height constraint */
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    #rsvp iframe {
+        height: 1200px; /* Slightly taller for mobile if needed - adjust as needed */
+    }
+}
 }
 
 /* Import elegant fonts */
