@@ -350,7 +350,7 @@ h5 {
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    min-height: 100px;
+    min-height: 80px;
 }
 
 .event:hover {
@@ -628,7 +628,7 @@ h5 {
     }
 
     #rsvp .section-content {
-        padding: 0 15px; -->
+        padding: 0 15px; 
         max-width: 100%;
     }
 
