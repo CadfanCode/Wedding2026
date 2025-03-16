@@ -386,16 +386,15 @@ body {
 }
 
 .timeline-item h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5em;
-    color: #3f3f3f;
     margin-bottom: 8px;
+    font-size: 24px;
+    color: #3f3f3f;
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
 }
 
 .timeline-item p {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1em;
-    color: #666;
+    color: #3f3f3f;
     line-height: 1.4;
 }
 
