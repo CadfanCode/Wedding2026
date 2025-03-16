@@ -308,7 +308,8 @@ h5 {
     font-weight: 400;
     color: #3f3f3f;
 }
-/* Schedule Section Styling */
+
+/* Schedule Section */
 .schedule-list {
     max-width: 800px;
     margin: 0 auto;
@@ -322,13 +323,17 @@ h5 {
 
 .day-title {
     font-family: 'Playfair Display', serif;
-    font-size: 24px; /* Reduced size */
+    font-size: 24px;
     color: #3f3f3f;
     font-weight: 400;
     text-align: center;
     margin-bottom: 20px;
     display: block;
     width: 100%;
+}
+
+.day-line {
+    display: none;
 }
 
 .events-container {
@@ -355,9 +360,9 @@ h5 {
 }
 
 .event-time {
-    width: 140px;
+    width: 150px;
     font-family: 'Playfair Display', serif;
-    font-size: 14px; /* Reduced size */
+    font-size: 16px;
     font-weight: 700;
     color: #999;
     text-align: left;
@@ -388,6 +393,27 @@ h5 {
     margin-bottom: 10px;
     font-weight: 300;
 }
+
+.event-details h5 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: #666;
+    margin-top: 10px;
+    font-weight: 400;
+}
+
+.event-details a {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.event-details a:hover {
+    text-decoration: underline;
+}
+
 /* Timeline (if used) */
 .timeline {
     display: flex;
