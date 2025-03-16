@@ -309,11 +309,12 @@ h5 {
     color: #3f3f3f;
 }
 
-/* Schedule Section - Reverted Layout */
+/* Schedule Section - Explicitly Reverted to Original Layout */
 .schedule-list {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px 0;
+    text-align: center; /* Ensure centering at the list level */
 }
 
 .schedule-day {
@@ -324,9 +325,11 @@ h5 {
     font-family: 'Playfair Display', serif;
     font-size: 28px;
     color: #3f3f3f;
-    text-align: center;
+    font-weight: 400;
+    text-align: center; /* Explicitly centered */
     margin-bottom: 20px;
-    position: relative;
+    display: block; /* Ensure it’s a block element */
+    width: 100%; /* Full width for centering */
 }
 
 .day-line {
@@ -335,6 +338,7 @@ h5 {
 
 .events-container {
     width: 100%;
+    text-align: left; /* Reset to left for events */
 }
 
 .event {
