@@ -188,7 +188,26 @@
         <!-- RSVP Section -->
  <section id="rsvp" class="section">
     <h2>RSVP</h2>
-    <iframe src="https://forms.gle/342BiGBiFMpTuV9y6" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    <!--<iframe src="https://forms.gle/342BiGBiFMpTuV9y6" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>-->
+    <div id="password-gate">
+        <label for="password">Enter the RSVP Password:</label>
+        <input type="text" id="password" required>
+        <button onclick="checkPassword()">Submit</button>
+        <p id="error" style="color: red;"></p>
+      </div>
+      <div id="rsvp-form"></div>
+      <script>
+        function checkPassword() {
+          const password = document.getElementById('password').value;
+          const correctPassword = 'Wedding2025';
+          if (password === correctPassword) {
+            document.getElementById('password-gate').style.display = 'none';
+            document.getElementById('rsvp-form').innerHTML = '<iframe src="https://forms.gle/342BiGBiFMpTuV9y6" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>';
+          } else {
+            document.getElementById('error').textContent = 'Incorrect password. Please try again.';
+          }
+        }
+      </script>
 </section>
 
 
