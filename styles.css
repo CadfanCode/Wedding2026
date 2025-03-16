@@ -345,7 +345,7 @@ h5 {
     display: flex;
     align-items: center; /* Center vertically relative to .event-details */
     margin-bottom: 20px;
-    padding: 15px;
+    padding: 5px 15px 15px 15px; /* top right bottom left */
     background: rgba(255, 255, 255, 0.9);
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -603,7 +603,7 @@ h5 {
     .event {
         flex-direction: column; /* Revert to column for mobile */
         align-items: flex-start; /* Reset to top alignment for mobile */
-        padding: 3px;
+        padding: 10px;
         margin-bottom: 15px;
     }
 
