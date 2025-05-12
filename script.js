@@ -24,11 +24,21 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetId = this.getAttribute('href').substring(1); // Remove '#'
             const targetSection = document.getElementById(targetId);
             
+            // Debug: Log the target section
+            console.log(`Navigating to section: ${targetId}`, targetSection);
+
+            if (!targetSection) {
+                console.error(`Section with ID ${targetId} not found`);
+                return;
+            }
+            
             // Hide all sections, show the target with fade-in
             sections.forEach(section => {
                 section.classList.remove('active', 'fade-in');
+                section.style.display = 'none'; // Explicitly hide
             });
             targetSection.classList.add('active');
+            targetSection.style.display = 'flex'; // Explicitly show
             setTimeout(() => targetSection.classList.add('fade-in'), 10); // Trigger fade-in after display
 
             // Scroll to top of content area
@@ -49,8 +59,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Ensure 'home' is visible on load
     const homeSection = document.getElementById('home');
-    homeSection.classList.add('active');
-    homeSection.classList.add('fade-in');
+    if (homeSection) {
+        homeSection.classList.add('active');
+        homeSection.style.display = 'flex';
+        homeSection.classList.add('fade-in');
+    }
 
     // Optional: RSVP iframe adjustment (static height set in CSS, but this ensures it loads)
     function adjustRSVPIframe() {
@@ -72,6 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Schedule enhancement function
     function enhanceSchedule() {
         const scheduleSection = document.getElementById('schedule');
+—if (!scheduleSection) return;
         const dayLine = scheduleSection.querySelector('.day-line');
         const events = scheduleSection.querySelectorAll('.event');
 
@@ -79,7 +93,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const adjustLineWidth = () => {
             const containerWidth = scheduleSection.offsetWidth;
             const lineWidth = Math.min(50, containerWidth * 0.1); // Max 50px, scales with container
-            dayLine.style.width = `${lineWidth}px`;
+            if (dayLine) {
+                dayLine.style.width = `${lineWidth}px`;
+            }
         };
         adjustLineWidth();
         window.addEventListener('resize', adjustLineWidth);
