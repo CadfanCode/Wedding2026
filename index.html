@@ -3,161 +3,279 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wedding Website</title>
+    <title>Linnéa & Cai</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <div class="container">
-        <header class="header">
-            <div class="header-inner">
-                <div class="logo-container">
-                    <img src="/images/logo.png" alt="Wedding Logo" class="logo">
-                </div>
-                <button class="menu-toggle">
-                    <span class="hamburger"></span>
-                </button>
-                <nav class="navbar">
-                    <ul class="nav-menu">
-                        <li><a href="#home" class="nav-link active">Home</a></li>
-                        <li><a href="#travel" class="nav-link">Travel</a></li>
-                        <li><a href="#accommodation" class="nav-link">Accommodation</a></li>
-                        <li><a href="#information" class="nav-link">Information</a></li>
-                        <li><a href="#rsvp" class="nav-link">RSVP</a></li>
-                        <li><a href="#schedule" class="nav-link">Wedding Schedule</a></li>
-                    </ul>
-                </nav>
+    <header class="header">
+        <div class="header-inner">
+            <div class="logo-container">
+                <a href="#home"><img src="/images/logo.png" alt="Wedding Logo" class="logo"></a>
             </div>
-        </header>
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <nav class="navbar">
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <!--<li><a href="#wales" class="nav-link">About Wales</a></li>-->
+                    <li><a href="#travel" class="nav-link">Travel</a></li>
+                    <li><a href="#accomodation" class="nav-link">Accommodation</a></li>
+                    <li><a href="#wedding" class="nav-link">Information</a></li>
+                    <li><a href="#rsvp" class="nav-link">RSVP</a></li>
+                    <li><a href="#schedule" class="nav-link">Wedding Schedule</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-        <div class="content">
-            <section class="hero" id="home">
-                <img src="/images/wedding-image.jpg" alt="Wedding Image">
+    <div class="container">
+        <main class="content">
+            <!-- Home Section (unchanged) -->
+            <section id="home" class="hero">
+                <img src="/images/CaiLinnéaCircle3.png" alt="Image of Linnéa and Cai">
                 <div class="text-content">
-                    <h2 class="date">Wednesday, 1st July 2026</h2>
-                    <h3 class="location">Ynys Môn, Gogledd Cymru<br>Isle of Anglesey, North Wales</h3>
+                    <div class="date">Wednesday, 1st July 2026</div>
+                    <div class="location">Ynys Môn, Gogledd Cymru<br>Isle of Anglesey, North Wales</div>
                 </div>
             </section>
-
-            <section class="section" id="travel">
+            <!-- About Wales -->
+            <section id="wales" class="section">
+                <h2>About Wales</h2>
                 <div class="section-content">
-                    <h2>About Wales</h2>
-                    <h3>Croeso i'r Gogledd Cymru!</h3>
-                    <p>Welcome to North Wales! For many of you it will be your first time visiting Wales, so we thought we'd provide a bit of information to prepare you.</p>
-                    <p>North Wales is a hidden gem in the UK still largely unspoilt by mass tourism. In fact it was voted as one of the <a href="#">top 10 regions</a> in the world to travel to!</p>
-                    <p>However, travelling here can be a little tricky, so we’ve provided some details below to make it as simple as possible. If you plan on staying in North Wales for longer than a few days, we recommend hiring a car to make the most of what the region has to offer! Don’t worry if this isn’t an option—there are still plenty of places that can be reached by train and a few short taxi rides!</p>
-                    <h3>Language</h3>
-                    <p>Welsh is a celtic language that is widely spoken in Wales, particularly North Wales. All road signs in Wales are bilingual with Welsh presented above English.</p>
-                    <h3>History</h3>
-                    <p>You don't have to throw a stone far to hit ancient history here! The wedding is being held on the Isle of Anglesey (Ynys Mon) that is famous as the last stronghold of the Druids with ancient sites littered around the island: <a href="#">Bryn Celli Ddu</a>.</p>
-                    <h2>Travel</h2>
-                    <h3>By Air</h3>
-                    <p><strong>Manchester Airport:</strong> The largest international airport with car rental and train services easily accessible. The venue is approximately a 1-hour 45-minute drive or 2 hours 45 minutes to 4 hours by train.</p>
-                    <p><strong>Dublin Airport:</strong> An alternative for those that may want to spend a few days in Ireland before making the short ferry journey over the Irish Sea to North Wales.</p>
-                    <p><strong>Liverpool Airport:</strong> This is technically the closest airport although it is a minor airport with fewer international flights. Transport from Liverpool airport to North Wales requires a little more effort as there is no train station immediately available to the airport itself. Although buses and taxis can take you from the airport and into the city to catch any trains.</p>
-                    <h3>By Sea</h3>
-                    <p>If you're travelling from Ireland you can catch one of the regular ferries from Dublin to Holyhead (Isle of Anglesey) take 2 hours 15 minutes to 3 hours 30 minutes. However be warned that ferries can sometimes (but not often) be cancelled due to strong seas. When you arrive at Holyhead you can take a 40-minute taxi to the venue or a train to Bangor (Gwynedd) with a shorter taxi trip of 15 mins to the venue.</p>
-                    <p>Ferries can be booked via:<br>
-                        <a href="#">Irish Ferries</a><br>
-                        <a href="#">Stena Line</a>
+                    <h3><i class="fas fa-info-circle"></i> Croeso i'r Gogledd Cymru!</h3>
+                    <p>
+                        Welcome to North Wales! For many of you it will be your first time visiting Wales, so we thought we'd provide a bit of information to prepare you.<br>
+
+                        North Wales is a hidden gem in the UK still largely unspoilt by mass tourism. In fact it was voted as one of the 
+                        <a href="https://www.lonelyplanet.com/articles/best-in-travel-2017-top-10-regions" target="_blank">top 10 regions</a> 
+                        in the world to travel to! <br>
+                        
+                        
+                        However, travelling here can be a little tricky, so we’ve provided some details below to make it as simple as possible. 
+                        If you plan on staying in North Wales for longer than a few days, we recommend hiring a car to make the most of what the region has to offer! 
+                        Don’t worry if this isn’t an option—there are still plenty of places that can be reached by train and a few short taxi rides!
                     </p>
-                    <h3>By Car</h3>
-                    <p>Free guest parking is available at the venue. For those staying overnight at a different location, make sure you check parking arrangements with your hotel, as not all have customer parking.</p>
-                    <h3>By Train</h3>
-                    <p>Travel to Bangor (Gwynedd) via train, then take a short taxi to the venue. We recommend against travelling to Llanfair­pwllgwyngyll­gogery­chwyrn­drobwll­llan­tysilio­gogo­goch as trains often only stop here upon request and successfully requesting the stop may be tricky for some.</p>
-                    <h3>By Bus</h3>
-                    <p>Forget it! Local public transport is as useful as a fart in a jam jar! (fel rhech mewn pot jam!).</p>
+                    <h2>Language</h2>
+                    <p> Welsh is a celtic language that is widely spoken in Wales, particulary North Wales. All road signs in Wales are bilingual with Welsh presented above English.</p>
+                    <h2>History</h2>
+                        You don't have to throw a stone far to hit ancient history here! The wedding is being held on the Isle of Anglesey (Ynys Mon) that is famous as the last stronghold of the Druids with ancients
+                        sites littered around the island: <a href="https://cadw.gov.wales/visit/places-to-visit/bryn-celli-ddu-chambered-tomb" target="_blank"> Bryn Celli Ddu</a>
+                </div>
+            </section>
+            <!-- Travel section-->
+            <section id="travel" class="section">
+                <h2>Travel</h2>
+                <div class="section-content">
+                    <img src="/images/Wales3.jpg" alt="North Wales">
+                    <h3><i class="fas fa-plane"></i> By Air</h3>
+                    <p>
+                        <a href="https://www.manchesterairport.co.uk/" target="_blank"><strong>Manchester Airport:</strong></a> The largest international airport with car rental and train services easily accessible. 
+                        The venue is approximately a 1-hour 45-minute drive or 2 hours 45 minutes to 4 hours by train. 
+                    </p><br>
+                    <p>
+                        <a href="https://www.dublinairport.com/" target="_target"><strong>Dublin Airport:</strong></a> An alternative for those that may want to spend a few days in Ireland before making the short
+                         ferry journey over the Irish Sea to North Wales.  
+                    </p><br>
+                    <p>
+                        <a href="https://www.liverpoolairport.com/" target="_target"><strong>Liverpool Airport:</strong></a> This is technically the closest airport although it is a minor airport with fewer international
+                        flights. Transport from Liverpool airport to North Wales requires a little more effort as there is no train station immediately available to the airport itself. Although buses and taxes can take 
+                        you from the airport and into the city to catch any trains.
+                    </p>
+            
+                    <h3><i class="fas fa-ship"></i> By Sea</h3>
+                    <p>
+                        If you're travelling from Ireland you can catch one of the regular ferries from <strong>Dublin to Holyhead</strong> (Isle of Anglesey) take 2 hours 15 minutes to 3 hours 30 minutes. However be warned
+                    that ferries can sometimes (but not often) be cancelled due to strong seas. When you arrive at Holyhead you can take a 40-minute taxi to the venue or a train to Bangor (Gwynedd) with a shorter taxi trip
+                     of 15 mins to the venue. </p><br>  
+                      <p>
+                        <strong>Ferries can be booked via:</strong>
+                            <br><a href="https://www.irishferries.com/uk-en/routes-and-times/dublin-holyhead/" target="_blank"><strong>Irish Ferries</strong></a>
+                            <br><a href="https://www.stenaline.co.uk/routes/holyhead-dublin" target="_blank"><strong>Stena Line</strong></a>
+                    </p>
+            
+                    <h3><i class="fas fa-car"></i> By Car</h3>
+                    <p>
+                        Free guest parking is available at the venue. For those staying overnight at a different location, make sure you check 
+                        parking arrangements with your hotel, as not all have customer parking.
+                    </p>
+            
+                    <h3><i class="fas fa-train"></i> By Train</h3>
+                    <p>
+                        Travel to <strong>Bangor (Gwynedd)</strong> via <a href="https://www.mytrainpal.com/" target="_blank">train</a>, 
+                        then take a short taxi to the venue.<br> 
+                        We recommend against travelling to Llanfair­pwllgwyngyll­gogery­chwyrn­drobwll­llan­tysilio­gogo­goch as trains often only stop here upon request and successfully requesting the stop may be tricky for some.
+                    </p>
+            
+                    <h3><i class="fas fa-bus"></i> By Bus</h3>
+                    <p>
+                        Forget it! Local public transport is as useful as a fart in a jam jar! (fel rhech mewn pot jam!).
+                    </p>
+                </div>
+            </section>
+            
+            <!-- Accommodation Section -->
+            <section id="accommodation" class="section">
+                <h2>Accommodation</h2>
+                <div class="section-content">
+                    <h3><i class="fas fa-bed"></i> Accommodation Options</h3>
+                    <p>
+                        <a href="https://chateaurhianfa.co.uk/" target="_blank"><strong>Chateau Rhianfa (Isle of Anglesey):</strong></a> The venue boasts fantastic views of Eryri (Snowdonia) and the Menai Straits. The hotel is of classical 
+                        french architecture and built in the mid 19th century by a local baronet for his wife. </p><p>
+                        Staying at the venue is recommended for those who want to make the most of evening as hotel guests can stay at the venue after midnight and continue to enjoy the bar and atmosphere!</p><p>
+                        You can book a room directly via their <a href="https://chateaurhianfa.co.uk" target="_blank">website</a>.
+                    </p><br>
+                    <p>
+                        <a href="https://y-capel-guest-house.hotels-wales.com/en/" target="_blank"><strong>Y Capel (Conwy):</strong></a> A converted chapel in the heart of a medieval castled town of Conwy. It situated approximately 100yds from Conwy train station with regular trains to Bangor 
+                        or a 40 minute drive to the wedding venue. Free parking is available to guests but cannot be guaranteed due to the limited number spaces.</p><p>
+                        A tradition for the groom is to "rehydrate" after a day in the mountains at one of Conwys several pubs, mainly the Albion to be honest. Other great good pubs include The Erskine Arms, The Bank and Vino Mondo (if you prefer wine).</p><p>
+                        Additionally Conwy offers fine dining at <a href="https://www.thejackdawconwy.co.uk/" target="_blank">The Jackdaw</a>, a pricey but highly recommended and personal culinary experience from one of Wales's most creative chefs. Alternatively you could also enjoy a walk along
+                        the sandy beach of Conwy Morfa followed by a meal at a deceivingly tucked away Michellin recommended restaurant 
+                        <a href="https://darwinescapes.co.uk/aberconwy-resort-spa/facilities/signatures-restaurant/" target="_blank">Signatures</a>
+                              </p><br>
+                    <p>
+                        <a href="https://www.coedmawrhall.com/" target="_blank"><strong>Coed Mawr (Rowen):</strong></a> A tranquil manor in Conwy valley — A favourite of the bride. It is perfect for countryside walks and enjoying the quiet nature of North Wales.<br> This is a rural destination so a
+                         car is required; no nearby amenities except for a village pub. This venue is approximately an 1hr drive from the venue.
+                    </p>
                 </div>
             </section>
 
-            <section class="section" id="accommodation">
-                <div class="section-content">
-                    <h2>Accommodation Options</h2>
-                    <p><strong>Chateau Rhianfa (Isle of Anglesey):</strong> The venue boasts fantastic views of Eryri (Snowdonia) and the Menai Straits. The hotel is of classical french architecture and built in the mid 19th century by a local baronet for his wife.</p>
-                    <p>Staying at the venue is recommended for those who want to make the most of evening as hotel guests can stay at the venue after midnight and continue to enjoy the bar and atmosphere!</p>
-                    <p>You can book a room directly via their <a href="#">website</a>.</p>
-                    <p><strong>Y Capel (Conwy):</strong> A converted chapel in the heart of a medieval castled town of Conwy. It is situated approximately 100yds from Conwy train station with regular trains to Bangor or a 40 minute drive to the wedding venue. Free parking is available to guests but cannot be guaranteed due to the limited number spaces.</p>
-                    <p>A tradition for the groom is to "rehydrate" after a day in the mountains at one of Conwy’s several pubs, mainly the Albion to be honest. Other great good pubs include The Erskine Arms, The Bank and Vino Mondo (if you prefer wine).</p>
-                    <p>Additionally Conwy offers fine dining at The Jackdaw, a pricey but highly recommended and personal culinary experience from one of Wales’s most creative chefs. Alternatively you could also enjoy a walk along the sandy beach of Conwy Morfa followed by a meal at a deceivingly tucked away Michelin recommended restaurant <a href="#">Signatures</a>.</p>
-                    <p><strong>Coed Mawr (Rowen):</strong> A tranquil manor in Conwy valley — A favourite of the bride. It is perfect for countryside walks and enjoying the quiet nature of North Wales. This is a rural destination so a car is required; no nearby amenities except for a village pub. This venue is approximately an 1hr drive from the venue.</p>
-                </div>
-            </section>
+            <!-- Wedding Day Section (unchanged) -->
+             <!-- Wedding Day Section -->
+          <section id="wedding" class="section">
+            <h2>Wedding Info</h2>
+            <div class="section-content">
+                <h3>The Venue</h3>
+                <p>
+                    The wedding and reception will be held at held at Chateau Rhianfa in North Wales. It boasts spectactular lounge rooms, banquetting hall and gardens with views of Eryri 
+                    (Snowdonia), the Menai Strait, Llandudnos penisula and Irish Sea.
+                </p>
+                <h3>What is the dresscode</h3>
+                <p> 
+                    Wear your finest and we kindly ask that you avoid wearing trainers, except if you plan to change into them for dancing in the evening.
+                    Ladies avoid wearing white.
 
-            <section class="section" id="information">
-                <div class="section-content">
-                    <h2>The Venue</h2>
-                    <p>The wedding and reception will be held at Chateau Rhianfa in North Wales. It boasts spectacular lounge rooms, banqueting hall and gardens with views of Eryri (Snowdonia), the Menai Strait, Llandudno’s peninsula and Irish Sea.</p>
-                    <h2>What is the dress code</h2>
-                    <p>Wear your finest and we kindly ask that you avoid wearing trainers, except if you plan to change into them for dancing in the evening. Ladies avoid wearing white.</p>
-                    <p>Most importantly we want you to feel comfortable and to enjoy yourselves!</p>
-                    <h2>Is the wedding indoors or outdoors</h2>
-                    <p>If the weather is good, the ceremony will be outdoors. Otherwise it'll be indoors. Regardless, the guests are free to wander the gardens or just enjoy the views.</p>
-                    <h2>Can I go for a swim in the Menai Straits?</h2>
-                    <p>Swimming in the Menai is extremely discouraged. This section of water is known as one of the most treacherous stretches of water in the British Isles. However if you want to cool off in the sea there are plenty of beautiful beaches across North Wales! e.g. Traeth Llanddwyn, Traeth Benllech, Traeth Trearddur, Abersoch & Aberdaron.</p>
-                    <h2>Can I walk to and from the venue?</h2>
-                    <p>It is not recommended to walk to and from the venue as there are no footpaths and cars travel quickly along the winding road.</p>
-                    <h2>Is it okay to take pictures with our phones and cameras during the wedding?</h2>
-                    <p>Absolutely! You are welcome to take photographs after the ceremony. However during the ceremony we kindly ask that you refrain from taking photographs or films.</p>
-                    <h2>Will food be served?</h2>
-                    <p>Yes! Our aim is that everyone is comfortable and well fed. If you have any allergies or dietary requirements make sure to let us know when you RSVP.</p>
-                    <h2>Do I have to pay for parking?</h2>
-                    <p>Parking at Chateau Rhianfa is free for guests.</p>
-                    <h2>Is there a bar?</h2>
-                    <p>Yes, they take card and cash.</p>
-                    <h2>Can my children come?</h2>
-                    <p>As much as we love your little ones, we are unable to accommodate children. Plus we want you to be able to let your hair down and enjoy the day child-free.</p>
-                    <h2>But what if I can't find a nanny?</h2>
-                    <p>Anglesey boasts many ancient sacrificial stones that may also be an appealing alternative!</p>
-                    <h2>Is there a wedding gift list?</h2>
-                    <p>No, celebrating the big day with our nearest and dearest is all we wish for. Cana efo fi rŵan!...nid wy'n gofyn bywyd moethus, etc.</p>
-                </div>
-            </section>
-
-            <section class="section" id="rsvp">
-                <div class="section-content">
-                    <h2>RSVP</h2>
-                    <iframe src="https://example.com/rsvp" title="RSVP Form"></iframe>
-                </div>
-            </section>
-
-            <section class="section" id="schedule">
-                <div class="section-content">
-                    <h2>Schedule</h2>
-                    <div class="schedule-list">
-                        <div class="schedule-day">
-                            <h3 class="day-title">Tuesday, 30th June 2026</h3>
-                            <div class="day-line"></div>
-                            <div class="events-container">
-                                <div class="event">
-                                    <div class="event-time">7:30 PM – 10:00 PM</div>
-                                    <div class="event-details">
-                                        <h3>Pre-Wedding Drinks!</h3>
-                                        <p>We'll be having a few pre-wedding drinks the evening before on the 30th June at Chateau Rhianfa. This is an opportunity for those arriving the day before to mingle before the big day. Wear whatever you're comfortable in!</p>
-                                        <h5>Chateau Rhianfa, Isle of Anglesey, North Wales</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="schedule-day">
-                            <h3 class="day-title">Wednesday, 1st July 2026</h3>
-                            <div class="day-line"></div>
-                            <div class="events-container">
-                                <div class="event">
-                                    <div class="event-time">12:00 PM – 12:00 AM</div>
-                                    <div class="event-details">
-                                        <h3>The Big Day / Y Diwrnod Mawr!</h3>
-                                        <p>Aim to arrive at the venue between 12:00-12:30 PM. At 1PM the ceremony starts, followed by food, drinks, games and dancing!</p>
-                                        <p>Everything is being held at the same venue in the Groom’s home area.</p>
-                                        <h5>Formal but glamorous attire (Please no trainers)</h5>
-                                        <h5>Chateau Rhianfa, Isle of Anglesey, North Wales</h5>
-                                    </div>
-                                </div>
+                    Most importantly we want you to feel comfortable and to enjoy yourselves!
+                </p>
+                <h3>Is the wedding indoors or outdoors</h3>
+                <p>
+                    If the weather is good, The ceremony will be outdoors. Otherwise it'll be indoors. Regardless, the guests are free to wander the gardens or just enjoy the views.
+                </p>
+                <h3>Can I go for a swim the Menai Straits?</h3>
+                <p> Swimming in this Menai is extremely discouraged. This section of water is known as one of the most treacherous stretches of water in the British Isles. However if you want to cool off in the sea there are plenty of beautiful beaches across North Wales! e.g. Traeth Llanddwyn,
+                     Traeth Benllech, Traeth Trearddur, Abersoch & Aberdaron.
+                </p>
+                <h3>Can I walk to and from the venue?</h3>
+                <p>It is not recommended to walk to and from the venue as there are no footpaths and cars travel quickly along the winding road. 
+                </p>
+                <h3>Is it okay to take pictures with our phones and cameras during the wedding?</h3>
+                <p>Absolutely! You are welcome to take photographs after the ceremony. However during the ceremony we kindly ask that you refrain from taking photographs or films.
+                </p>
+                <h3>Will food be served?</h3>
+                <p>Yes! Our aim is that everyone is comfortable and well fed. If you have any allergies or dietary requirements make sure to let us know when you RSVP.
+                </p>
+                <h3>Do I have to pay for parking?</h3>
+                <p>Parking at Chateau Rhianfa is free for guests.
+                </p>
+                <h3>Is there a bar?</h3>
+                <p>Yes, they take card and cash.
+                </p>
+                <h3>Can my children come?</h3>
+                <p>As much as we love your little ones, we are unable to accommodate children. Plus we want you to be able to let your hair down and enjoy the day child-free.
+                </p>
+                <h3>But what if I can't find a nanny?</h3>
+                <p>Anglesey boasts many ancient sacrificial stones that may also be an appealing alternative!
+                </p>
+                <h3>Is there a wedding gift list?</h3>
+                <p>No, celebrating the big day with our nearest and dearest is all we wish for. <i>Cana efo fi rŵan!...nid wy'n gofyn bywyd moethus, etc.</i>
+                </p>
+        </section>
+    
+        <!-- RSVP Section -->
+        <section id="rsvp" class="section">
+            <h2>RSVP</h2>
+            <div class="section-content">
+                <iframe src="https://forms.gle/342BiGBiFMpTuV9y6" frameborder="0" marginheight="0" marginwidth="0" allowfullscreen>Loading…</iframe>
+            </div>
+        </section>
+        <!-- SCHEDULE SECTION-->
+        <section id="schedule" class="section">
+            <h2>Schedule</h2>
+            <div class="schedule-list">
+                <div class="schedule-day">
+                    <h3 class="day-title"><strong>Tuesday, 30th June 2026</strong></h3>
+                    <div class="events-container">
+                        <div class="event">
+                            <div class="event-time">7:30 PM – 10:00 PM</div>
+                            <div class="event-details">
+                                <h3>Pre-Wedding Drinks!</h3>
+                                <p>We'll be having a few pre-wedding drinks the evening before on the 30th June at Chateau Rhianfa. This is an opportunity for those arriving the day before to mingle before the big day. Wear whatever you're comfortable in!</p>
+                                <h5><a href="https://chateaurhianfa.co.uk/" target="_blank">Chateau Rhianfa, Isle of Anglesey, North Wales</a></h5>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
-        </div>
-    </div>
+                <div class="schedule-day">
+                    <h3 class="day-title"><strong>Wednesday, 1st July 2026</strong></h3>
+                    <div class="events-container">
+                        <div class="event">
+                            <div class="event-time">12:00 PM – 12:00 AM</div>
+                            <div class="event-details">
+                                <h3>The Big Day / Y Diwrnod Mawr!</h3>
+                                <p>Aim to arrive at the venue between 12:00-12:30 PM. At 1PM the ceremony starts, followed by food, drinks, games and dancing!</p><p>
+                                     Everything is being held at the same venue in the Grooms home area.</p>
+                                <p>
+                                    Formal but glamourous attire (Please no trainers)</p>
+                                <h5><a href="https://chateaurhianfa.co.uk/" target="_blank">Chateau Rhianfa, Isle of Anglesey, North Wales</a></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        </main>
+    </div> 
     <script src="script.js"></script>
-</body>
+    <script>
+    (function() {
+      function c() {
+        var b = a.contentDocument || a.contentWindow.document;
+        if (b) {
+          var d = b.createElement('script');
+          d.innerHTML = "window.__CF$cv$params={r:'91f57f0fac65457b',t:'MTc0MTgwNTYyNi4wMDAwMDA='};";
+          var a = document.createElement('script');
+          a.nonce = '';
+          a.src = '/cdn-cgi/challenge-platform/scripts/jsd/script.js'; // Corrected this line to reference script.js
+          document.getElementsByTagName('head')[0].appendChild(a);
+        }
+      }
+      if (document.body) {
+        var a = document.createElement('iframe');
+        a.height = 1;
+        a.width = 1;
+        a.style.position = 'absolute';
+        a.style.top = 0;
+        a.style.left = 0;
+        a.style.border = 'none';
+        a.style.visibility = 'hidden';
+        document.body.appendChild(a);
+        if ('loading' !== document.readyState) c();
+        else if (window.addEventListener)
+          document.addEventListener('DOMContentLoaded', c);
+        else {
+          var e = document.onreadystatechange || function() {};
+          document.onreadystatechange = function(b) {
+            e(b);
+            if ('loading' !== document.readyState) {
+              document.onreadystatechange = e;
+              c();
+            }
+          };
+        }
+      }
+    })();
+    </script>
+    <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'943d375cea6668c1',t:'MTc0NzkyNjM3NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
