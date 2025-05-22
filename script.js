@@ -40,13 +40,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 navbar.classList.remove('active');
             }
 
-            // Apply enhancements based on section
+            // If schedule section, apply enhancements
             if (targetId === 'schedule') {
                 enhanceSchedule();
-            } else if (targetId === 'rsvp') {
-                adjustRSVPIframe();
-            } else if (targetId === 'accommodation') {
-                adjustAccommodationSection();
             }
         });
     });
@@ -56,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
     homeSection.classList.add('active');
     homeSection.classList.add('fade-in');
 
-    // RSVP iframe adjustment
+    // Optional: RSVP iframe adjustment
     function adjustRSVPIframe() {
         const rsvpIframe = document.querySelector('#rsvp iframe');
         if (rsvpIframe) {
@@ -65,23 +61,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Accommodation section adjustment
-    function adjustAccommodationSection() {
-        const accommodationSection = document.getElementById('accommodation');
-        if (accommodationSection) {
-            accommodationSection.style.display = 'flex';
-        }
-    }
-
-    // Run enhancements if schedule or RSVP or accommodation is active on load
+    // Run enhancements if schedule or RSVP is active on load
     if (document.querySelector('#schedule.active')) {
         enhanceSchedule();
     }
     if (document.querySelector('#rsvp.active')) {
         adjustRSVPIframe();
-    }
-    if (document.querySelector('#accommodation.active')) {
-        adjustAccommodationSection();
     }
 
     // Schedule enhancement function
@@ -134,12 +119,4 @@ document.addEventListener('DOMContentLoaded', () => {
         adjustSpacing();
         window.addEventListener('resize', adjustSpacing);
     }
-
-    // Enhance touch feedback for menu toggle
-    menuToggle.addEventListener('touchstart', () => {
-        menuToggle.classList.add('active-touch');
-    });
-    menuToggle.addEventListener('touchend', () => {
-        menuToggle.classList.remove('active-touch');
-    });
 });
