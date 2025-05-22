@@ -14,14 +14,14 @@ document.addEventListener('DOMContentLoaded', () => {
     
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            e.preventDefault();
+            e.preventDefault(); // Prevent default anchor behavior
             
             // Remove 'active' from all links, add to clicked link
             navLinks.forEach(nav => nav.classList.remove('active'));
             this.classList.add('active');
             
             // Get the target section
-            const targetId = this.getAttribute('href').substring(1);
+            const targetId = this.getAttribute('href').substring(1); // Remove '#'
             const targetSection = document.getElementById(targetId);
             
             // Hide all sections, show the target with fade-in
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 section.classList.remove('active', 'fade-in');
             });
             targetSection.classList.add('active');
-            setTimeout(() => targetSection.classList.add('fade-in'), 10);
+            setTimeout(() => targetSection.classList.add('fade-in'), 10); // Trigger fade-in after display
 
             // Scroll to top of content area
             window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -40,13 +40,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 navbar.classList.remove('active');
             }
 
-            // Apply enhancements based on section
+            // If schedule section, apply enhancements
             if (targetId === 'schedule') {
                 enhanceSchedule();
-            } else if (targetId === 'rsvp') {
-                adjustRSVPIframe();
-            } else if (targetId === 'accommodation') {
-                adjustAccommodationSection();
             }
         });
     });
@@ -56,32 +52,21 @@ document.addEventListener('DOMContentLoaded', () => {
     homeSection.classList.add('active');
     homeSection.classList.add('fade-in');
 
-    // RSVP iframe adjustment
+    // Optional: RSVP iframe adjustment (static height set in CSS, but this ensures it loads)
     function adjustRSVPIframe() {
         const rsvpIframe = document.querySelector('#rsvp iframe');
         if (rsvpIframe) {
-            rsvpIframe.style.width = '100%';
-            rsvpIframe.style.maxWidth = '800px';
+            rsvpIframe.style.width = '100%'; // Reinforce CSS
+            rsvpIframe.style.maxWidth = '800px'; // Match section-content
         }
     }
 
-    // Accommodation section adjustment
-    function adjustAccommodationSection() {
-        const accommodationSection = document.getElementById('accommodation');
-        if (accommodationSection) {
-            accommodationSection.style.display = 'flex';
-        }
-    }
-
-    // Run enhancements if schedule or RSVP or accommodation is active on load
+    // Run enhancements if schedule or RSVP is active on load
     if (document.querySelector('#schedule.active')) {
         enhanceSchedule();
     }
     if (document.querySelector('#rsvp.active')) {
         adjustRSVPIframe();
-    }
-    if (document.querySelector('#accommodation.active')) {
-        adjustAccommodationSection();
     }
 
     // Schedule enhancement function
@@ -93,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Dynamic line adjustment
         const adjustLineWidth = () => {
             const containerWidth = scheduleSection.offsetWidth;
-            const lineWidth = Math.min(50, containerWidth * 0.1);
+            const lineWidth = Math.min(50, containerWidth * 0.1); // Max 50px, scales with container
             dayLine.style.width = `${lineWidth}px`;
         };
         adjustLineWidth();
@@ -113,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const eventTimes = scheduleSection.querySelectorAll('.event-time');
         eventTimes.forEach(time => {
             const text = time.textContent.trim();
-            time.textContent = text.replace('–', ' – ').replace(/pm/gi, 'PM');
+            time.textContent = text.replace('–', ' – ').replace(/pm/gi, 'PM'); // Uniform spacing and case
         });
 
         // Responsive spacing
@@ -134,12 +119,4 @@ document.addEventListener('DOMContentLoaded', () => {
         adjustSpacing();
         window.addEventListener('resize', adjustSpacing);
     }
-
-    // Enhance touch feedback for menu toggle
-    menuToggle.addEventListener('touchstart', () => {
-        menuToggle.classList.add('active-touch');
-    });
-    menuToggle.addEventListener('touchend', () => {
-        menuToggle.classList.remove('active-touch');
-    });
 });

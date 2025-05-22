@@ -62,11 +62,12 @@ body {
     background: none;
     border: none;
     cursor: pointer;
-    padding: 0;
-    width: 30px;
-    height: 30px;
+    padding: 10px;
+    width: 40px;
+    height: 40px;
     position: relative;
     z-index: 1001;
+    touch-action: manipulation;
 }
 
 .hamburger {
@@ -113,6 +114,12 @@ body {
 .menu-toggle.active .hamburger::after {
     transform: rotate(-45deg);
     bottom: 0;
+}
+
+.menu-toggle:focus,
+.menu-toggle:active {
+    outline: none;
+    background: rgba(212, 165, 165, 0.2);
 }
 
 .navbar {
