@@ -428,8 +428,8 @@ h5 {
 .timeline::before {
     content: '';
     position: absolute;
-   
- left: 20px;
+    
+left: 20px;
     top: 0;
     bottom: 0;
     width: 2px;
@@ -547,7 +547,6 @@ h5 {
 
     .menu-toggle {
         display: block;
-        position: static;
     }
 
     .navbar {
