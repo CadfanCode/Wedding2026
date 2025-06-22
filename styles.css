@@ -669,6 +669,17 @@ left: 20px;
     #accommodation .section-content img {
         width: 100%;
     }
+    .video-container {
+  width: 100%;
+  max-width: 800px; /* Optional: limit on large screens */
+  margin: 0 auto;
+}
+
+.video-container video {
+  width: 100%;
+  height: auto;
+}
+
 }
 
 /* Overrides for Schedule Section */
