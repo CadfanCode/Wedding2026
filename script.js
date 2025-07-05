@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', () => {
     // Mobile menu toggle
     const menuToggle = document.querySelector('.menu-toggle');
@@ -40,13 +41,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 navbar.classList.remove('active');
             }
 
-            // Section-specific enhancements
+            // If schedule section, apply enhancements
             if (targetId === 'schedule') {
                 enhanceSchedule();
-            } else if (targetId === 'video') {
-                enhanceVimeoVideo();
-            } else if (targetId === 'rsvp') {
-                adjustRSVPIframe();
             }
         });
     });
@@ -56,58 +53,21 @@ document.addEventListener('DOMContentLoaded', () => {
     homeSection.classList.add('active');
     homeSection.classList.add('fade-in');
 
-    // Optional: RSVP iframe adjustment
+    // Optional: RSVP iframe adjustment (static height set in CSS, but this ensures it loads)
     function adjustRSVPIframe() {
         const rsvpIframe = document.querySelector('#rsvp iframe');
         if (rsvpIframe) {
-            rsvpIframe.style.width = '100%';
-            rsvpIframe.style.maxWidth = '800px';
+            rsvpIframe.style.width = '100%'; // Reinforce CSS
+            rsvpIframe.style.maxWidth = '800px'; // Match section-content
         }
     }
 
-    // Optional: Vimeo video enhancement
-    function enhanceVimeoVideo() {
-        const videoSection = document.getElementById('video');
-        const iframe = videoSection?.querySelector('iframe');
-
-        if (!iframe) return;
-
-        const container = document.createElement('div');
-        container.className = 'video-container';
-
-        // Set styles via JS (can be moved to CSS file instead)
-        Object.assign(container.style, {
-            position: 'relative',
-            paddingTop: '56.25%',
-            height: '0',
-            overflow: 'hidden',
-            width: '90%',
-            maxWidth: '800px',
-            margin: '0 auto'
-        });
-
-        Object.assign(iframe.style, {
-            position: 'absolute',
-            top: '0',
-            left: '0',
-            width: '100%',
-            height: '100%',
-            border: '0'
-        });
-
-        videoSection.appendChild(container);
-        container.appendChild(iframe);
-    }
-
-    // Run enhancements if active on load
+    // Run enhancements if schedule or RSVP is active on load
     if (document.querySelector('#schedule.active')) {
         enhanceSchedule();
     }
     if (document.querySelector('#rsvp.active')) {
         adjustRSVPIframe();
-    }
-    if (document.querySelector('#video.active')) {
-        enhanceVimeoVideo();
     }
 
     // Schedule enhancement function
@@ -119,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Dynamic line adjustment
         const adjustLineWidth = () => {
             const containerWidth = scheduleSection.offsetWidth;
-            const lineWidth = Math.min(50, containerWidth * 0.1);
+            const lineWidth = Math.min(50, containerWidth * 0.1); // Max 50px, scales with container
             dayLine.style.width = `${lineWidth}px`;
         };
         adjustLineWidth();
@@ -139,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const eventTimes = scheduleSection.querySelectorAll('.event-time');
         eventTimes.forEach(time => {
             const text = time.textContent.trim();
-            time.textContent = text.replace('–', ' – ').replace(/pm/gi, 'PM');
+            time.textContent = text.replace('–', ' – ').replace(/pm/gi, 'PM'); // Uniform spacing and case
         });
 
         // Responsive spacing
@@ -160,4 +120,5 @@ document.addEventListener('DOMContentLoaded', () => {
         adjustSpacing();
         window.addEventListener('resize', adjustSpacing);
     }
+    
 });
