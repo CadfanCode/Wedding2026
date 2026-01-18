@@ -309,16 +309,25 @@ h5 {
     color: #3f3f3f;
 }
 
-/* Schedule Section */
+/* Schedule Section - UPDATED FOR SIDE-BY-SIDE */
 .schedule-list {
-    max-width: 800px;
+    max-width: 1200px; /* Increased from 800px */
     margin: 0 auto;
     padding: 20px 0;
     text-align: center;
+    /* Flexbox Layout */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .schedule-day {
     margin-bottom: 40px;
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
 }
 
 .day-title {
@@ -343,14 +352,16 @@ h5 {
 
 .event {
     display: flex;
-    align-items: center;
+    flex-direction: column; /* Stack vertically for card look */
+    align-items: flex-start;
     margin-bottom: 20px;
-    padding: 5px 15px 15px 15px; /* Original padding */
+    padding: 20px;
     background: rgba(255, 255, 255, 0.9);
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     min-height: 80px;
+    text-align: left;
 }
 
 .event:hover {
@@ -360,21 +371,22 @@ h5 {
 }
 
 .event-time {
-    width: 150px;
+    width: 100%; /* Full width */
     font-family: 'Playfair Display', serif;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 700;
-    color: #999;
+    color: #d4a5a5; /* Highlight color */
     text-align: left;
-    padding-right: 20px;
-    margin-right: 20px;
-    white-space: nowrap;
-    flex-shrink: 0;
+    padding-right: 0;
+    margin-right: 0;
+    margin-bottom: 10px;
+    white-space: normal;
 }
 
 .event-details {
     flex: 1;
     min-width: 0;
+    margin-left: 0;
 }
 
 .event-details h3 {
@@ -383,6 +395,7 @@ h5 {
     font-weight: 400;
     color: #3f3f3f;
     margin-bottom: 5px;
+    margin-top: 0;
 }
 
 .event-details p {
@@ -428,8 +441,7 @@ h5 {
 .timeline::before {
     content: '';
     position: absolute;
-    
-left: 20px;
+    left: 20px;
     top: 0;
     bottom: 0;
     width: 2px;
@@ -526,6 +538,17 @@ left: 20px;
     border-radius: 8px;
 }
 
+.video-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.video-container video {
+    width: 100%;
+    height: auto;
+}
+
 /* Mobile Adjustments */
 @media (max-width: 768px) {
     .container {
@@ -610,12 +633,17 @@ left: 20px;
         width: 100%;
     }
 
+    /* REVERT Schedule to Column on Mobile */
     .schedule-list {
         padding: 15px 0;
+        flex-direction: column;
+        align-items: center;
     }
 
     .schedule-day {
         margin-bottom: 30px;
+        width: 100%;
+        max-width: 100%;
     }
 
     .day-title {
@@ -624,26 +652,18 @@ left: 20px;
     }
 
     .event {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 2px 10px 10px 10px; /* Updated mobile padding with reduced top */
+        padding: 20px; /* Keep consistent padding */
         margin-bottom: 15px;
+        /* Keep flex-direction column from desktop style */
     }
 
     .event-time {
-        width: 100%;
-        text-align: left;
         margin-bottom: 5px;
-        margin-right: 0;
         font-size: 14px;
     }
 
-    .event-details {
-        margin-left: 0;
-    }
-
     .event-details h3 {
-        font-size: 20px; /* Adjusted for mobile */
+        font-size: 20px;
     }
 
     .event-details p {
@@ -669,26 +689,6 @@ left: 20px;
     #accommodation .section-content img {
         width: 100%;
     }
-    .video-container {
-  width: 100%;
-  max-width: 800px; /* Optional: limit on large screens */
-  margin: 0 auto;
-}
-
-.video-container video {
-  width: 100%;
-  height: auto;
-}
-
-}
-
-/* Overrides for Schedule Section */
-#schedule .event {
-    padding: 2px 15px 15px 15px; /* Override top padding for desktop */
-}
-
-#schedule .event-details h3 {
-    margin-top: 0; /* Override h3 margin */
 }
 
 /* Import Fonts */
