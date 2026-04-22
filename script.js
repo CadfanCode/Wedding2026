@@ -44,6 +44,9 @@ document.addEventListener('DOMContentLoaded', () => {
             // If schedule section, apply enhancements
             if (targetId === 'schedule') {
                 enhanceSchedule();
+                if (window.weddingAuth && window.weddingAuth.renderSchedule) {
+                    window.weddingAuth.renderSchedule();
+                }
             }
         });
     });
@@ -78,6 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Dynamic line adjustment
         const adjustLineWidth = () => {
+            if (!dayLine) return;
             const containerWidth = scheduleSection.offsetWidth;
             const lineWidth = Math.min(50, containerWidth * 0.1); // Max 50px, scales with container
             dayLine.style.width = `${lineWidth}px`;
