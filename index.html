@@ -8,6 +8,8 @@
       gtag('js', new Date());
       gtag('config', 'G-FFCBTZQ5HW');
     </script>
+    <script src="https://keycloak-wedding.fly.dev/js/keycloak.js"></script>
+    <script src="keycloak-auth.js"></script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,6 +36,10 @@
                     <li><a href="#couple" class="nav-link">The Couple</a></li>
                 </ul>
             </nav>
+        </div>
+        <div id="auth-bar" style="display:none; align-items:center; padding:6px 20px; gap:12px; font-family:'Poppins',sans-serif; font-size:14px; color:#666; border-top:1px solid #eee; justify-content:flex-end;">
+            <span id="auth-username"></span>
+            <button id="auth-logout-btn">Sign out</button>
         </div>
     </header>
 
@@ -207,15 +213,31 @@
             </section>
             <section id="schedule" class="section">
                 <h2>Schedule</h2>
-                <div class="schedule-list">
 
+                <div id="schedule-content" class="schedule-list" style="display:none;">
+
+                    <!-- TUESDAY: VIP only -->
+                    <div class="schedule-day" id="tuesday-schedule" style="display:none;">
+                        <h3 class="day-title"><strong>Tuesday, 30th June 2026</strong></h3>
+                        <div class="events-container">
+                            <div class="event">
+                                <div class="event-details">
+                                    <h3>Croeso! / Welcome!</h3>
+                                    <p>4pm - Afternoon tea with the bride and groom.</p>
+                                    <h5><a href="https://chateaurhianfa.co.uk/" target="_blank">Chateau Rhianfa, North Wales</a></h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- WEDNESDAY: all authenticated guests -->
                     <div class="schedule-day">
                         <h3 class="day-title"><strong>Wednesday, 1st July 2026</strong></h3>
                         <div class="events-container">
                             <div class="event">
                                 <div class="event-details">
                                     <h3>Y Diwrnod Mawr!/ The Big Day!</h3>
-                                    <p>3pm - Wedding Ceremony followed by champagne & canapes.</p>
+                                    <p>3pm - Wedding Ceremony followed by champagne &amp; canapes.</p>
                                     <p>5pm - Wedding breakfast.</p>
                                     <p>8pm - Speeches, drinks and mingle.</p>
                                     <p>Formal but glamourous attire (Please no trainers).</p>
@@ -225,6 +247,7 @@
                         </div>
                     </div>
 
+                    <!-- THURSDAY: all authenticated guests -->
                     <div class="schedule-day">
                         <h3 class="day-title"><strong>Thursday, 2nd July 2026</strong></h3>
                         <div class="events-container">
@@ -234,7 +257,7 @@
                                     <p>11am - Minibus to Vineyard.</p>
                                     <p>12pm - Wine tour, tasting and grazing board.</p>
                                     <p>2:30pm - Minibus into Conwy.</p>
-                                    <p>&lt; An interlude to allow everyone to check into their respective hotels, 
+                                    <p>&lt; An interlude to allow everyone to check into their respective hotels,
                                      explore the town at their leisure, unwind and recuperate before resuming with the party!&gt;</p>
                                     <p>5pm - Dinner in a private room at the Castle hotel.</p>
                                     <p>?pm - Bar-hop around Conwy!</p>
@@ -243,6 +266,7 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
             </section>
 
@@ -269,33 +293,20 @@
                             <p>
                             Check out the video below to see the proposal adventure!
                             </p>
-                        <style>
-.video-container {
-  position: relative;
-  padding-top: 56.25%; /* 16:9 aspect ratio */
-  height: 0;
-  overflow: hidden;
-  max-width: 100%;
-}
-
-.video-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-</style>
-
-<div class="video-container">
-  <iframe
-    src="https://www.youtube.com/embed/itgG_61vnio"
-    title="YouTube video"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    allowfullscreen>
-  </iframe>
-</div>
+                        </div>
+                        <div class="video-container">
+                          <iframe
+                            src="https://www.youtube.com/embed/itgG_61vnio"
+                            title="YouTube video"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen>
+                          </iframe>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
 <script src="script.js"></script>
 </body>
 </html>
