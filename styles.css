@@ -66,7 +66,7 @@ body {
     width: 30px;
     height: 30px;
     position: relative;
-    z-index: 1001;
+    z-index: 1002;
 }
 
 .hamburger {
@@ -309,186 +309,196 @@ h5 {
     color: #3f3f3f;
 }
 
-/* Schedule Section - UPDATED FOR SIDE-BY-SIDE */
+/* Schedule Section */
 .schedule-list {
-    max-width: 1200px; /* Increased from 800px */
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 20px 0;
-    text-align: center;
-    /* Flexbox Layout */
+    padding: 20px 0 40px;
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    gap: 20px;
+    gap: 30px;
     flex-wrap: wrap;
 }
 
 .schedule-day {
-    margin-bottom: 40px;
     flex: 1;
-    min-width: 300px;
-    max-width: 400px;
+    min-width: 320px;
+    max-width: 480px;
 }
 
-.day-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 24px;
-    color: #3f3f3f;
-    font-weight: 400;
+/* Day header card */
+.day-header {
+    background: linear-gradient(135deg, #d4a5a5 0%, #c49090 100%);
+    border-radius: 16px 16px 0 0;
+    padding: 28px 24px 22px;
     text-align: center;
-    margin-bottom: 20px;
-    display: block;
-    width: 100%;
+    color: #fff;
 }
 
-.day-line {
-    display: none;
+.day-date {
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0.85;
+    margin-bottom: 4px;
 }
 
-.events-container {
-    width: 100%;
-    text-align: left;
-}
-
-.event {
-    display: flex;
-    flex-direction: column; /* Stack vertically for card look */
-    align-items: flex-start;
-    margin-bottom: 20px;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    min-height: 80px;
-    text-align: left;
-}
-
-.event:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    background: rgba(212, 165, 165, 0.1);
-}
-
-.event-time {
-    width: 100%; /* Full width */
+.day-number {
     font-family: 'Playfair Display', serif;
-    font-size: 18px;
+    font-size: 32px;
     font-weight: 700;
-    color: #d4a5a5; /* Highlight color */
-    text-align: left;
-    padding-right: 0;
-    margin-right: 0;
-    margin-bottom: 10px;
-    white-space: normal;
+    line-height: 1.1;
+    margin-bottom: 6px;
 }
 
-.event-details {
-    flex: 1;
-    min-width: 0;
-    margin-left: 0;
-}
-
-.event-details h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 24px;
-    font-weight: 400;
-    color: #3f3f3f;
-    margin-bottom: 5px;
-    margin-top: 0;
-}
-
-.event-details p {
-    font-family: 'Poppins', sans-serif;
+.day-number sup {
     font-size: 16px;
-    color: #666;
-    line-height: 1.5;
-    margin-bottom: 10px;
-    font-weight: 300;
-}
-
-.event-details h5 {
-    font-family: 'Playfair Display', serif;
-    font-size: 18px;
-    color: #666;
-    margin-top: 10px;
     font-weight: 400;
 }
 
-.event-details a {
-    font-family: 'Poppins', sans-serif;
+.day-subtitle {
+    font-family: 'Playfair Display', serif;
     font-size: 16px;
-    color: #333;
-    font-weight: bold;
+    font-style: italic;
+    opacity: 0.9;
+    margin-bottom: 10px;
+}
+
+.day-location {
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    opacity: 0.85;
+    letter-spacing: 0.5px;
+}
+
+.day-location a {
+    color: #fff;
     text-decoration: none;
+    border-bottom: 1px solid rgba(255,255,255,0.5);
+    transition: border-color 0.2s;
 }
 
-.event-details a:hover {
-    text-decoration: underline;
+.day-location a:hover {
+    border-color: #fff;
 }
 
-/* Timeline (if used) */
-.timeline {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+/* Timeline events container */
+.timeline-events {
+    background: #fff;
+    border-radius: 0 0 16px 16px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    padding: 12px 24px 20px;
     position: relative;
-    padding: 20px 0;
-    max-width: 800px;
-    margin: 0 auto;
 }
 
-.timeline::before {
+.timeline-events::before {
     content: '';
     position: absolute;
-    left: 20px;
-    top: 0;
-    bottom: 0;
+    left: 47px;
+    top: 16px;
+    bottom: 20px;
     width: 2px;
-    background: linear-gradient(to bottom, #d4a5a5 0%, #d4a5a5 50%, transparent 100%);
-    z-index: 0;
+    background: linear-gradient(to bottom, #d4a5a5, rgba(212,165,165,0.15));
 }
 
-.timeline-item {
-    background: linear-gradient(135deg, #ffffff 0%, #f9f9f9 100%);
-    padding: 20px 25px 20px 50px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+/* Individual event row */
+.timeline-event {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 14px 0;
     position: relative;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-event + .timeline-event {
+    border-top: 1px solid #f2eded;
+}
+
+/* Icon circle */
+.timeline-icon {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #fff;
+    border: 2px solid #d4a5a5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #d4a5a5;
+    font-size: 14px;
+    position: relative;
     z-index: 1;
+    transition: background 0.2s, color 0.2s;
 }
 
-.timeline-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+.timeline-event:hover .timeline-icon {
+    background: #d4a5a5;
+    color: #fff;
 }
 
-.timeline-item::before {
-    content: url('/images/sketched-arrow.png');
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 20px;
-    height: 20px;
-    z-index: 1;
+/* Interlude special style */
+.timeline-interlude .timeline-icon {
+    border-style: dashed;
+    opacity: 0.75;
 }
 
-.timeline-item h3 {
+/* Content beside icon */
+.timeline-content {
+    flex: 1;
+    min-width: 0;
+    padding-top: 4px;
+}
+
+.tl-time {
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #d4a5a5;
+    margin-bottom: 2px;
+}
+
+.tl-label {
+    display: block;
     font-family: 'Playfair Display', serif;
-    font-size: 24px;
+    font-size: 17px;
     color: #3f3f3f;
     font-weight: 400;
-    margin-bottom: 8px;
+    margin-bottom: 3px;
 }
 
-.timeline-item p {
+.tl-desc {
     font-family: 'Poppins', sans-serif;
-    font-size: 16px;
-    color: #666;
-    line-height: 1.4;
+    font-size: 13px;
+    color: #888;
+    line-height: 1.5;
     font-weight: 300;
+    margin: 0;
+}
+
+/* Dress code / note bar */
+.timeline-note {
+    margin-top: 12px;
+    padding: 10px 14px;
+    background: rgba(212,165,165,0.08);
+    border-left: 3px solid #d4a5a5;
+    border-radius: 0 6px 6px 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    color: #888;
+    font-weight: 300;
+}
+
+.timeline-note i {
+    color: #d4a5a5;
+    margin-right: 6px;
 }
 
 /* RSVP Section */
@@ -633,41 +643,29 @@ h5 {
         width: 100%;
     }
 
-    /* REVERT Schedule to Column on Mobile */
+    /* Schedule on mobile */
     .schedule-list {
         padding: 15px 0;
         flex-direction: column;
-        align-items: center;
+        align-items: stretch;
+        gap: 24px;
     }
 
     .schedule-day {
-        margin-bottom: 30px;
-        width: 100%;
+        min-width: 0;
         max-width: 100%;
     }
 
-    .day-title {
-        font-size: 24px;
-        margin-bottom: 15px;
+    .day-number {
+        font-size: 26px;
     }
 
-    .event {
-        padding: 20px; /* Keep consistent padding */
-        margin-bottom: 15px;
-        /* Keep flex-direction column from desktop style */
+    .timeline-events::before {
+        left: 43px;
     }
 
-    .event-time {
-        margin-bottom: 5px;
-        font-size: 14px;
-    }
-
-    .event-details h3 {
-        font-size: 20px;
-    }
-
-    .event-details p {
-        font-size: 14px;
+    .tl-label {
+        font-size: 15px;
     }
 
     #rsvp .section-content {
