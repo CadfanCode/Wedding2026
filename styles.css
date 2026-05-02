@@ -14,7 +14,6 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    overflow-y: auto;
 }
 
 .container {
@@ -637,6 +636,9 @@ h5 {
 
     .section {
         padding: 80px 15px 20px;
+        max-height: calc(100vh - 80px);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
     }
 
     h2 {
